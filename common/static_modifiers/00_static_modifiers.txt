@@ -612,9 +612,10 @@ base_values = {
 	#@ The engine only supports positive_/negative_ pairs for hardcoded names
 	#@ (mandate, stability, piety, karma), so this builds the same curve by hand.
 	recover_army_morale_speed = -0.1	#@ pivot
-	land_morale = -0.15					#@ pivot
+	land_morale = -0.1					#@ pivot
 	manpower_recovery_speed = -0.1		#@ pivot
 	siege_ability = -0.05				#@ pivot
+	discipline = -0.05					#@ pivot
 	recover_navy_morale_speed = -0.1	#@ pivot
 	naval_morale = -0.15				#@ pivot
 	sailors_recovery_speed = -0.1		#@ pivot
@@ -857,9 +858,10 @@ mercantilism = {
 
 army_tradition = {
 	recover_army_morale_speed = 0.2			#@ was 0.1; doubled, see base_values pivot
-	land_morale = 0.3			#@ was 0.25; doubled, see base_values pivot
+	land_morale = 0.2			#@ was 0.25; doubled, see base_values pivot
 	manpower_recovery_speed = 0.2			#@ was 0.1; doubled, see base_values pivot
 	siege_ability = 0.1			#@ was 0.05; doubled, see base_values pivot
+	discipline = 0.1			#@ new; doubled, see base_values pivot
 	temples_influence = 0.1
 	mr_aristocrats_influence = 0.1
 	rr_girondists_influence = 0.1
@@ -883,6 +885,7 @@ navy_tradition = {
 	mr_traders_influence = 0.1
 	blockade_efficiency = 1
 	sailors_recovery_speed = 0.2			#@ was 0.2; doubled, see base_values pivot
+	global_ship_cost = -0.1			#@ new; scales 0 to -0.1, not pivoted
 	monthly_arabic_trade_influence_power = 0.2
 	burghers_loyalty_modifier = 0.05
 	vaisyas_loyalty_modifier = 0.05
