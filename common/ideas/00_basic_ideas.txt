@@ -373,7 +373,7 @@ innovativeness_ideas = {
 		modifier = {
 			factor = 0
 			OR = {
-				is_year = 1750			@ was 1700
+				is_year = 1750			#@ was 1700
 				innovativeness = 80
 			}
 		}
