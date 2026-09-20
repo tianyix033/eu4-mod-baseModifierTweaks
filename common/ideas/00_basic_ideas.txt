@@ -1203,8 +1203,8 @@ maritime_ideas = {
 			NOT = { num_of_ports = 10 }
 			NOT = {						#@ unless small and mostly coastal (Tungning, the Knights)
 				OR = {
-					AND = { num_of_ports = 3  NOT = { num_of_cities = 16 } }
-					AND = { num_of_ports = 1  NOT = { num_of_cities = 4 } }
+					AND = { num_of_ports = 3  NOT = { num_of_cities = 10 } }
+					AND = { num_of_ports = 1  NOT = { num_of_cities = 3 } }
 				}
 			}
 		}
@@ -1762,8 +1762,8 @@ naval_ideas = {
 			NOT = { num_of_ports = 10 }
 			NOT = {						#@ unless small and mostly coastal (Tungning, the Knights)
 				OR = {
-					AND = { num_of_ports = 3  NOT = { num_of_cities = 16 } }
-					AND = { num_of_ports = 1  NOT = { num_of_cities = 4 } }
+					AND = { num_of_ports = 3  NOT = { num_of_cities = 10 } }
+					AND = { num_of_ports = 1  NOT = { num_of_cities = 3 } }
 				}
 			}
 		}
