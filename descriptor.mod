@@ -4,5 +4,5 @@ tags={
 	"Gameplay"
 	"Historical"
 }
-name="DefinesTweaks"
+name="BaseModifiersTweaks"
 supported_version="v1.37.*.*"

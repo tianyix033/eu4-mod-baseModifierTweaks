@@ -176,7 +176,7 @@ sea_zone = {
 }
 
 land_province = {
-	max_attrition = 25						#CHANGED: was 5. Raises the cap on monthly land attrition.
+	max_attrition = 25						#@ was 5. Raises the cap on monthly land attrition.
 	local_manpower_modifier = 0.25			#25% of manpower.
 	local_has_musketeers = yes
 	local_has_streltsy = yes
