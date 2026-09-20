@@ -321,7 +321,7 @@ innovativeness_ideas = {
 		#embracement_cost = -0.1	@ moved to later
 	}
 	dynamic_court = {
-		advisor_pool = 2
+		advisor_pool = 2		#@ added
 	}
 	print_culture = {
 		global_institution_spread = 0.25
@@ -373,7 +373,7 @@ innovativeness_ideas = {
 		modifier = {
 			factor = 0
 			OR = {
-				#is_year = 1750			@ was 1700
+				is_year = 1750			@ was 1700
 				innovativeness = 80
 			}
 		}

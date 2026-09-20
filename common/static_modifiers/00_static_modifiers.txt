@@ -1938,40 +1938,58 @@ new_order_regiment_mobilized_modifier = {
 	infantry_power = 0.15
 }
 
+#@ Korean government modifiers will be simplified and somewhat toned down for ai
+#@ The idea is two nerfs and four buffs for each modifier, plus estate changes
 inward_focus_modifier = {
-	core_creation = 0.33
-	province_warscore_cost = 1
-	stability_cost_to_declare_war = 1
-	ae_impact = 0.33
-	development_cost_modifier = -0.05
-	defensiveness = 0.15
+	global_trade_power = -0.33		#@ new
+	army_tradition_decay = 0.02		#@ new	
+	development_cost = -0.1		#@ added
+	global_unrest = -1				#@ was 2
 	fort_maintenance_modifier = -0.2
-	build_cost = -0.05
-	global_unrest = -2
-	all_estate_loyalty_equilibrium = 0.05
+	church_loyalty_modifier = 0.1		#@ new
+	church_influence_modifier = 0.1		#@ new
+	# core_creation = 0.33		@ removed
+	# province_warscore_cost = 1		@ removed
+	# stability_cost_to_declare_war = 1		@ removed
+	# ae_impact = 0.33		@ removed
+	# defensiveness = 0.15		@ removed
+	# development_cost_modifier = -0.05		@ removed
+	# all_estate_loyalty_equilibrium = 0.05		@ removed
 }
 
 outward_focus_modifier = {
-	ae_impact = 0.15
-	land_forcelimit_modifier = -0.1
-	trade_efficiency = 0.1
+	stability_cost_modifier = 0.25		#@ added
+	land_morale = -0.1				#@ new
 	diplomatic_reputation = 1
-	global_colonial_growth = 20
-	range = 0.25
-	burghers_loyalty_modifier = 0.05
-	harmonization_speed = 0.25
+	trade_efficiency = 0.2			#@ was 0.1
+	global_institution_spread = 0.33		#@ new
+	burghers_loyalty_modifier = 0.1			#@ new
+	burghers_influence_modifier = 0.1		#@ new
+	#global_colonial_growth = 20		@ removed
+	#ae_impact = 0.15		@ removed
+	#land_forcelimit_modifier = -0.1		@ removed
+	#range = 0.25		@ removed
+	#harmonization_speed = 0.25		@ removed
 }
 
 expansion_focus_modifier = {
-	development_cost_modifier = 0.1
-	all_estate_loyalty_equilibrium = -0.1
-	global_unrest = 2
-	diplomatic_reputation = -1
+	development_cost_modifier = 0.2		#@ was 0.1
+	diplomatic_reputation = -2			#@ was -1
 	core_creation = -0.1
-	land_morale = 0.05
-	naval_morale = 0.05
-	manpower_recovery_speed = 0.1
-	ae_impact = -0.1
+	infantry_power = 0.1				#@ new
+	global_manpower_modifier = 0.1		#@ new
+	galley_power = 0.2					#@ new
+	nobles_loyalty_equilibrium = 0.1	#@ new
+	nobles_influence_modifier = 0.1		#@ new
+	
+	#all_estate_loyalty_equilibrium = -0.1		@ removed
+	#global_unrest = 2		@ removed
+	
+	
+	# land_morale = 0.05		@ removed
+	# naval_morale = 0.05		@ removed
+	# manpower_recovery_speed = 0.1		@ removed
+	# ae_impact = -0.1		@ removed
 }
 
 ########################################
