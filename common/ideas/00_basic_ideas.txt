@@ -314,16 +314,18 @@ innovativeness_ideas = {
 	}
 	empiricism = {
 		innovativeness_gain = 0.5
+		yearly_innovativeness = 0.25		#@ added
 	}
 	scientific_revolution = {
 		technology_cost = -0.1
-		embracement_cost = -0.1
+		#embracement_cost = -0.1	@ moved to later
 	}
 	dynamic_court = {
-		advisor_pool = 1
+		advisor_pool = 2
 	}
 	print_culture = {
 		global_institution_spread = 0.25
+		embracement_cost = -0.25		#@ added
 	}
 	optimism = {
 		war_exhaustion = -0.05
@@ -371,7 +373,7 @@ innovativeness_ideas = {
 		modifier = {
 			factor = 0
 			OR = {
-				is_year = 1700 
+				#is_year = 1750			@ was 1700
 				innovativeness = 80
 			}
 		}
@@ -1842,7 +1844,7 @@ mercenary_ideas = {
 		mil_tech_cost_modifier = -0.1
 	}
 	benefits_for_mercenaries = {
-		war_taxes_cost_modifier = -0.5
+		#war_taxes_cost_modifier = -0.5		@ busted
 		merc_leader_army_tradition = 0.5
 	}
 	seasoned_veterans = {

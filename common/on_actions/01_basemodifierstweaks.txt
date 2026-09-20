@@ -1,0 +1,32 @@
+# BaseModifiersTweaks
+#
+# On Actions combine across files as of 1.36, so this file adds to vanilla's
+# 00_on_actions.txt rather than replacing it. Vanilla's on_development_effect
+# still runs.
+#
+# Scientific Revolution (innovativeness_ideas): developing a province also
+# advances whatever institution is currently spreading in that province.
+# Scope of on_*_development is the province that was developed.
+# add_next_institution_embracement_scaled = 5 is 1/6th of the province's
+# development, in percentage points of embracement.
+
+on_adm_development = {
+	if = {
+		limit = { owner = { has_idea = scientific_revolution } }
+		add_next_institution_embracement_scaled = 5
+	}
+}
+
+on_dip_development = {
+	if = {
+		limit = { owner = { has_idea = scientific_revolution } }
+		add_next_institution_embracement_scaled = 5
+	}
+}
+
+on_mil_development = {
+	if = {
+		limit = { owner = { has_idea = scientific_revolution } }
+		add_next_institution_embracement_scaled = 5
+	}
+}
