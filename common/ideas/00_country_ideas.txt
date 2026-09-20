@@ -703,11 +703,7 @@ RUS_ideas = {
 
 	land_of_the_rus = {
 		ae_impact = -0.15
-	}
-	siberian_frontier = {
-		may_establish_frontier = yes
-		auto_explore_adjacent_to_colony = yes
-	}
+	}	
 	russian_artillery_yard = {
 		artillery_cost = -0.1
 		artillery_power = 0.1
@@ -726,6 +722,10 @@ RUS_ideas = {
 	curriculum_of_the_cadet_corps = {
 		land_morale = 0.05
 		fire_damage_received = -0.1
+	}
+	siberian_frontier = {						#@ this is moved to last to delay exploration and boost early combat
+		may_establish_frontier = yes
+		auto_explore_adjacent_to_colony = yes
 	}
 }
 
@@ -1988,9 +1988,11 @@ CHI_ideas = {
 	}
 	inward_perfection = {
 		stability_cost_modifier = -0.10
+		monthly_reform_progress_modifier = 0.1				#@ added
 	}
 	yellow_river_dykes = {
 		production_efficiency = 0.1
+		global_monthly_devastation = -0.1					#@ added
 	}
 	salt_monopoly = {
 		trade_efficiency = 0.1
@@ -2000,6 +2002,7 @@ CHI_ideas = {
 	}
 	the_red_cannon = {
 		leader_land_fire = 1
+		artillery_cost = -0.10				#@ added
 	}
 }
 
@@ -3160,18 +3163,22 @@ MJZ_ideas = {
 	}
 	jurchen_foreign_service = {
 		leader_land_shock = 1
+		leader_land_manuever = 1
 	}
 	jurchen_border_skirmishes = {
 		manpower_recovery_speed = 0.2
+		army_tradition = 1					#@ added
 	}
 	jurchen_many_wives = {
 		heir_chance = 0.5
 	}
 	jurchen_warlords_generosity = {
 		improve_relation_modifier = 0.25
+		diplomatic_reputation = 1
 	}
 	the_jurchen_banners = {
 		amount_of_banners = 0.15
+		siege_ability = 0.1
 	}
 }
 
@@ -3195,10 +3202,10 @@ MCH_ideas = {
 		core_creation = -0.15
 	}
 	manchu_eight_banners = {
-		amount_of_banners = 0.25
+		amount_of_banners = 0.33			#@ was 0.25
 	}
 	the_manchu_alphabet = {
-		global_institution_spread = 0.05
+		global_institution_spread = 0.25	#@ was 0.05
 		stability_cost_modifier = -0.1
 	}
 	the_later_jin = {
@@ -3209,13 +3216,16 @@ MCH_ideas = {
 		meritocracy = 1
 	}	
 	link_with_the_mongol_dynasty = {
-		cavalry_power = 0.15
+		cavalry_power = 0.10				#@ was 0.15
+		siege_ability = 0.20				#@ added
 	}
 	manchu_chinese_learning = {
 		mil_tech_cost_modifier = -0.1
+		global_tax_modifier = 0.1
 	}
 	seven_grievances = {
 		ae_impact = -0.1
+		province_warscore_cost = -0.1		#@ added
 	}
 }
 
@@ -3237,14 +3247,18 @@ QNG_ideas = {
 	
 	
 	expand_the_banners = {
-		amount_of_banners = 0.3
+		amount_of_banners = 0.33			#@ was 0.3
+		siege_ability = 0.2					#@ added
 	}
 	the_green_standard_army = {
-		manpower_recovery_speed = 0.15
+		#manpower_recovery_speed = 0.15
+		land_forcelimit_modifier = 0.15
 		global_manpower_modifier = 0.15
 	}
 	pigtail_or_death = {
-		global_unrest = -2
+		#global_unrest = -2	completely inaccurate, this policy caused huge unrest
+		harsh_treatment_cost = -0.25
+		yearly_absolutism = 0.25
 	}
 	qng_bogda_khan = {
 		years_of_nationalism = -5
