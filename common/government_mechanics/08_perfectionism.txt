@@ -42,6 +42,14 @@ perfectionism_mechanic = {
 					factor = 1000	#kinda hardcoded because Korea is expected to be isolationist
 					tag = KOR
 				}
+				modifier = {						#@ added - inward suits a builder
+					factor = 2
+					has_idea_group = infrastructure_ideas
+				}
+				modifier = {						#@ added
+					factor = 2
+					has_idea_group = humanist_ideas
+				}
 			}
 		}
 		outward_focus = {
@@ -70,6 +78,30 @@ perfectionism_mechanic = {
 					factor = 0
 					personality = ai_militarist
 				}
+				modifier = {						#@ added - seafaring and trade pull outward
+					factor = 3
+					has_idea_group = exploration_ideas
+				}
+				modifier = {						#@ added
+					factor = 3
+					has_idea_group = maritime_ideas
+				}
+				modifier = {						#@ added
+					factor = 3
+					has_idea_group = trade_ideas
+				}
+				modifier = {						#@ added - trade is most of the economy
+					factor = 4
+					trade_income_percentage = 0.5
+				}
+				modifier = {						#@ added - a ruler who favours the sea or the ledger
+					factor = 2
+					OR = {
+						ruler_has_personality = navigator_personality
+						ruler_has_personality = entrepreneur_personality
+						ruler_has_personality = expansionist_personality
+					}
+				}
 			}
 		}
 		expansion_focus = {
@@ -94,9 +126,36 @@ perfectionism_mechanic = {
 			cooldown_desc = PERFECTIONISM_POLICY
 			ai_chance = {
 				factor = 10
-				modifier = {
-					factor = 0
+				modifier = {							#@ was: factor 0 unless personality = ai_militarist.
+					factor = 0						#@ now also allows the independent, marches, and warlike rulers
+					is_subject = yes
+					NOT = { is_march = yes }
 					NOT = { personality = ai_militarist }
+					NOT = { ruler_has_personality = conqueror_personality }
+					NOT = { ruler_has_personality = legendary_conqueror_personality }
+					NOT = { ruler_has_personality = bold_fighter_personality }
+					NOT = { ruler_has_personality = tactical_genius_personality }
+				}
+				modifier = {						#@ added - answering to nobody
+					factor = 10
+					is_subject = no
+				}
+				modifier = {						#@ added - a march exists to expand
+					factor = 10
+					is_march = yes
+				}
+				modifier = {						#@ added - a warlike ruler
+					factor = 3
+					OR = {
+						ruler_has_personality = conqueror_personality
+						ruler_has_personality = legendary_conqueror_personality
+						ruler_has_personality = bold_fighter_personality
+						ruler_has_personality = tactical_genius_personality
+					}
+				}
+				modifier = {						#@ added - keeps vanilla's militarist bias
+					factor = 3
+					personality = ai_militarist
 				}
 				modifier = {
 					factor = 0
