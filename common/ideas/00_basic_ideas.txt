@@ -848,7 +848,7 @@ trade_ideas = {
 	}
 
 	ai_will_do = {
-		factor = 0.4
+		factor = 0.8						#@ was 0.4
 		modifier = {
 			factor = 0
 			NOT = { num_of_cities = 6 }
@@ -916,7 +916,7 @@ economic_ideas = {
  	}	
 
 	ai_will_do = {
-		factor = 0.35
+		factor = 0.7						#@ was 0.35
 		modifier = {
 			factor = 2
 			inflation = 5
@@ -1185,7 +1185,7 @@ maritime_ideas = {
 	}
 
 	ai_will_do = {
-		factor = 0.55
+		factor = 1							#@ was 0.55 - now a peer of exploration and spy
 		modifier = {
 			factor = 0
 			is_tribal = yes
@@ -1198,29 +1198,31 @@ maritime_ideas = {
 			factor = 0
 			NOT = { num_of_ports = 1 }
 		}
-		modifier = {
-			factor = 0.25
+		modifier = {						#@ replaces four cascading age gates plus a flat
+			factor = 0.31					#@ 0.35 under 15 ports, which stacked to near zero
 			NOT = { num_of_ports = 10 }
-			current_age = age_of_discovery 
+			NOT = {						#@ unless small and mostly coastal (Tungning, the Knights)
+				OR = {
+					AND = { num_of_ports = 3  NOT = { num_of_cities = 16 } }
+					AND = { num_of_ports = 1  NOT = { num_of_cities = 4 } }
+				}
+			}
 		}
-		modifier = {
-			factor = 0.25
-			NOT = { num_of_ports = 20 }
-			current_age = age_of_reformation 
+		modifier = {						#@ added - hordes have no use for a fleet
+			factor = 0
+			OR = {
+				has_reform = steppe_horde
+				has_government_attribute = enables_horde_idea_group
+			}
 		}
-		modifier = {
-			factor = 0.25
-			NOT = { num_of_ports = 30 }
-			current_age = age_of_absolutism 
+		modifier = {						#@ added - many ports, few provinces: a coastal power
+			factor = 1.5
+			num_of_ports = 20
+			NOT = { num_of_cities = 50 }
 		}
-		modifier = {
-			factor = 0.25
-			NOT = { num_of_ports = 40 }
-			current_age = age_of_revolutions 
-		}
-		modifier = {
-			factor = 0.35
-			NOT = { num_of_ports = 15 }
+		modifier = {						#@ added - a colonial nation lives by the sea
+			factor = 1.5
+			is_colonial_nation = yes
 		}
 		modifier = {
 			factor = 1.5 
@@ -1741,7 +1743,7 @@ naval_ideas = {
 	}
 
 	ai_will_do = {
-		factor = 0.45
+		factor = 3.5						#@ was 0.45 - now a peer of the other MIL groups
 		modifier = {
 			factor = 0
 			is_tribal = yes
@@ -1758,12 +1760,31 @@ naval_ideas = {
 		modifier = {
 			factor = 0.31
 			NOT = { num_of_ports = 10 }
+			NOT = {						#@ unless small and mostly coastal (Tungning, the Knights)
+				OR = {
+					AND = { num_of_ports = 3  NOT = { num_of_cities = 16 } }
+					AND = { num_of_ports = 1  NOT = { num_of_cities = 4 } }
+				}
+			}
 		}
-		modifier = {
-			factor = 0.31
-			num_of_cities = 50
+		modifier = {						#@ added - hordes have no use for a fleet
+			factor = 0
+			OR = {
+				has_reform = steppe_horde
+				has_government_attribute = enables_horde_idea_group
+			}
 		}
-
+		modifier = {						#@ added - many ports, few provinces: a coastal power
+			factor = 1.5
+			num_of_ports = 20
+			NOT = { num_of_cities = 50 }
+		}
+		modifier = {						#@ added - a colonial nation lives by the sea
+			factor = 1.5
+			is_colonial_nation = yes
+		}
+		#@ dropped: factor 0.31 when num_of_cities = 50. Size alone says nothing
+		#@ about whether a country needs a navy.
 		modifier = {
 			factor = 10
 			has_government_attribute = is_pirate_republic_reform
