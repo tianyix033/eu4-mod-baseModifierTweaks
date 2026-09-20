@@ -254,12 +254,12 @@ provincial_production_size = {
 }
 
 knowledge_sharing = {
-	institution_growth = 12
+	institution_growth = 4					#@ was 12. /3 to match the slowed institution spread.
 	monthly_russian_modernization = 0.06
 }
 
 cardinals_spread_institution = {
-	institution_growth = 20
+	institution_growth = 6.67				#@ was 20. /3 to match the slowed institution spread.
 }
 
 manpower = {
