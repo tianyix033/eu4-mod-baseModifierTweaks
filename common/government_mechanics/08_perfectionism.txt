@@ -78,17 +78,13 @@ perfectionism_mechanic = {
 					factor = 0
 					personality = ai_militarist
 				}
-				modifier = {						#@ added - seafaring and trade pull outward
-					factor = 6
-					has_idea_group = exploration_ideas
-				}
-				modifier = {						#@ added
-					factor = 6
-					has_idea_group = maritime_ideas
-				}
-				modifier = {						#@ added
-					factor = 6
-					has_idea_group = trade_ideas
+				modifier = {						#@ added - seafaring and trade pull outward.
+					factor = 6						#@ one OR, not three modifiers: three would multiply to x216
+					OR = {
+						has_idea_group = exploration_ideas
+						has_idea_group = maritime_ideas
+						has_idea_group = trade_ideas
+					}
 				}
 				modifier = {						#@ added - trade is most of the economy
 					factor = 8
