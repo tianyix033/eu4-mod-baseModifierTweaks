@@ -605,6 +605,19 @@ base_values = {
 	max_flagships = 1
 	num_of_parliament_issues = 10
 	has_marines = yes
+
+	#@ Army and navy tradition pivot at 50 instead of scaling from 0.
+	#@ The matching entries in the army_tradition / navy_tradition blocks are
+	#@ doubled, so the total is (2A * T/100) - A: -A at 0, zero at 50, +A at 100.
+	#@ The engine only supports positive_/negative_ pairs for hardcoded names
+	#@ (mandate, stability, piety, karma), so this builds the same curve by hand.
+	recover_army_morale_speed = -0.1	#@ pivot
+	land_morale = -0.15					#@ pivot
+	manpower_recovery_speed = -0.1		#@ pivot
+	siege_ability = -0.05				#@ pivot
+	recover_navy_morale_speed = -0.1	#@ pivot
+	naval_morale = -0.15				#@ pivot
+	sailors_recovery_speed = -0.1		#@ pivot
 }
 
 # AI 'cheats' that compensate for flaws in its long-term decision making, removing these may severely cripple the AI
@@ -843,10 +856,10 @@ mercantilism = {
 }
 
 army_tradition = {
-	recover_army_morale_speed = 0.1
-	land_morale = 0.25
-	manpower_recovery_speed = 0.1
-	siege_ability = 0.05
+	recover_army_morale_speed = 0.2			#@ was 0.1; doubled, see base_values pivot
+	land_morale = 0.3			#@ was 0.25; doubled, see base_values pivot
+	manpower_recovery_speed = 0.2			#@ was 0.1; doubled, see base_values pivot
+	siege_ability = 0.1			#@ was 0.05; doubled, see base_values pivot
 	temples_influence = 0.1
 	mr_aristocrats_influence = 0.1
 	rr_girondists_influence = 0.1
@@ -862,14 +875,14 @@ army_tradition = {
 }
 
 navy_tradition = {
-	recover_navy_morale_speed = 0.1
-	naval_morale = 0.25
+	recover_navy_morale_speed = 0.2			#@ was 0.1; doubled, see base_values pivot
+	naval_morale = 0.3			#@ was 0.25; doubled, see base_values pivot
 	trade_steering = 1.0
 	privateer_efficiency = 0.25
 	enuchs_influence = 0.1
 	mr_traders_influence = 0.1
 	blockade_efficiency = 1
-	sailors_recovery_speed = 0.2
+	sailors_recovery_speed = 0.2			#@ was 0.2; doubled, see base_values pivot
 	monthly_arabic_trade_influence_power = 0.2
 	burghers_loyalty_modifier = 0.05
 	vaisyas_loyalty_modifier = 0.05
