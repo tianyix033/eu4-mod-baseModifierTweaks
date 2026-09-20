@@ -28,11 +28,11 @@ fur = {
 }
 
 salt = {
-	base_price = 3
+	base_price = 4				#@was 3
 }
 
 naval_supplies = {
-	base_price = 2
+	base_price = 3				#@was 2
 }
 
 
@@ -62,11 +62,11 @@ ivory = {
 
 # Eastern Resources
 tea = {
-	base_price = 2
+	base_price = 3				#@was 2
 }
 
 chinaware = {
-	base_price = 3
+	base_price = 3.5			#@was 3
 }
 
 spices = {
@@ -112,7 +112,7 @@ dyes = {
 #Additional Trade Goods
 
 livestock = {
-	base_price = 2
+	base_price = 2.5			#@was 2
 }
 
 incense = {
@@ -136,7 +136,7 @@ coal = {
 }
 
 cloves = {
-	base_price = 8
+	base_price = 4				#@was 8
 }
 
 unknown = {
