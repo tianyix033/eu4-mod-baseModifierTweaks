@@ -133,11 +133,11 @@ perfectionism_mechanic = {
 					NOT = { ruler_has_personality = tactical_genius_personality }
 				}
 				modifier = {						#@ added - answering to nobody
-					factor = 10
+					factor = 50
 					is_subject = no
 				}
 				modifier = {						#@ added - a march exists to expand
-					factor = 10
+					factor = 50
 					is_march = yes
 				}
 				modifier = {						#@ added - a warlike ruler
