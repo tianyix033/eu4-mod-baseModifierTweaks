@@ -4,9 +4,9 @@ type = cavalry
 unit_type = nomad_group
 
 maneuver = 2
-offensive_morale = 3
+offensive_morale = 4		#@ was 3. 13 -> 15 pips, parity with western tech 19 cavalry
 defensive_morale = 3
 offensive_fire = 0
 defensive_fire = 1
-offensive_shock = 3
+offensive_shock = 4		#@ was 3. 13 -> 15 pips, parity with western tech 19 cavalry
 defensive_shock = 3
