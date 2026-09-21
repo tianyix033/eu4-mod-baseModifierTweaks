@@ -2338,7 +2338,7 @@ superiority_chinese_unification = {
 	attacker = {
 		badboy_factor = 0.25
 		prestige_factor = 1.5
-		peace_cost_factor = 0.1		#@ was 0.5
+		peace_cost_factor = 0.2		#@ was 0.5
 		
 		allowed_provinces = {
 			OR = {
@@ -2352,13 +2352,13 @@ superiority_chinese_unification = {
 		}
 		
 		country_desc = ALL_CGROUP_COUNTRIES
-		prov_desc = ALL_CHINESE_PROVS
+		prov_desc = BMT_CHINESE_AND_LIAODONG_PROVS		#@ tooltip now matches allowed_provinces
 	}
 	
 	defender = {
 		badboy_factor = 0.25
 		prestige_factor = 1.5
-		peace_cost_factor = 0.1			#@ was 0.5
+		peace_cost_factor = 0.2			#@ was 0.5
 		
 		allowed_provinces = {
 			OR = {
@@ -2375,7 +2375,7 @@ superiority_chinese_unification = {
 		}
 		
 		country_desc = ALL_CGROUP_COUNTRIES
-		prov_desc = ALL_CHINESE_PROVS
+		prov_desc = BMT_CHINESE_AND_LIAODONG_PROVS		#@ tooltip now matches allowed_provinces
 	}
 	
 	war_name = CHINESE_UNIFICATION_WAR_NAME	
@@ -2387,7 +2387,7 @@ take_capital_take_mandate = {
 	attacker = {
 		badboy_factor = 0.5
 		prestige_factor = 1.0
-		peace_cost_factor = 0.1				#@ was 0.5
+		peace_cost_factor = 0.2				#@ was 0.5
 
 		peace_options = {
 			po_demand_provinces
@@ -2403,13 +2403,13 @@ take_capital_take_mandate = {
 		}
 
 		country_desc = CHINESE_EMPIRE_COUNTRY
-		prov_desc = ALL_PROVS
+		prov_desc = BMT_CHINESE_AND_LIAODONG_PROVS		#@ tooltip now matches allowed_provinces
 	}
 	
 	defender = {
 		badboy_factor = 0.5
 		prestige_factor = 1.0
-		peace_cost_factor = 0.1				#@ was 0.5
+		peace_cost_factor = 0.2				#@ was 0.5
 
 		peace_options = {
 			po_demand_provinces
@@ -2424,7 +2424,7 @@ take_capital_take_mandate = {
 		}
 
 		country_desc = ALL_COUNTRIES
-		prov_desc = ALL_PROVS
+		prov_desc = BMT_CHINESE_AND_LIAODONG_PROVS		#@ tooltip now matches allowed_provinces
 	}
 	
 	war_name = CELESTIAL_EMPIRE_WAR_NAME
