@@ -952,6 +952,60 @@ FRA_ideas_2 = {
 	}
 }
 
+#@ FRA_ideas_3 - identical twin of FRA_ideas_2.
+#@ swap_free_idea_group excludes the set you currently hold, so a revolutionary
+#@ France that accepts the 'New Traditions and Ambitions' event while already on
+#@ FRA_ideas_2 skips past it, fails FRA_ideas (still revolutionary), and falls
+#@ through to french_culture_ideas -- 'French Ducal Ideas'. This gives the swap
+#@ somewhere harmless to land. Swapping again bounces back to FRA_ideas_2.
+#@ Inner idea names are shared deliberately; vanilla does the same across
+#@ VEN_ideas and VEN_ideas_2, which share six of seven.
+FRA_ideas_3 = {
+	start = {
+		max_revolutionary_zeal = 5 
+		harsh_treatment_cost = -0.5
+	}
+	
+	bonus = {
+		siege_ability = 0.15
+	}	
+
+	trigger = {
+		tag = FRA
+		OR = {
+			is_revolution_target = yes
+			is_revolutionary = yes 
+		} 
+	}
+	free = yes		#will be added at load.
+	
+	revolutionary_tribunal = {
+		years_of_nationalism = -10
+	}
+	elan = {
+		land_morale = 0.15
+		morale_damage = 0.05
+	}
+	mandats_territoriaux = {
+		production_efficiency = 0.15
+		inflation_reduction = 0.05
+	} 
+	liberty_egalite_fraternity = {
+		tolerance_heretic = 1 
+		tolerance_heathen = 1 
+	}
+	jourdan_law = {
+		manpower_recovery_speed = 0.2
+	}
+	napoleonic_tactics = {
+		military_tactics = 0.1
+		drill_gain_modifier = 0.5
+	}
+	european_ambitions = {
+		core_creation = -0.2
+	}
+}
+
 
 TUR_ideas = {
 	start = {
