@@ -28,7 +28,7 @@ fur = {
 }
 
 salt = {
-	base_price = 4				#@was 3
+	base_price = 3				
 }
 
 naval_supplies = {
