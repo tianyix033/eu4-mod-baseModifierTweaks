@@ -422,6 +422,7 @@ fort_15th = {
 	time = 30
 	modifier = {
 		fort_level = 2
+		local_defender_dice_roll_bonus = 1	#@ new. A fort backs up the troops standing on it.
 	}
 
 	# THIS = Province, FROM = Builder(not nessecairly owner, can be overlord)
@@ -921,6 +922,7 @@ fort_16th = {
 	make_obsolete = fort_15th
 	modifier = {
 		fort_level = 4
+		local_defender_dice_roll_bonus = 1	#@ new. A fort backs up the troops standing on it.
 	}
 
 	# THIS = Province, FROM = Builder(not nessecairly owner, can be overlord)
@@ -1538,6 +1540,7 @@ fort_17th = {
 
 	modifier = {
 		fort_level = 6
+		local_defender_dice_roll_bonus = 1	#@ new. A fort backs up the troops standing on it.
 	}
 
 	# THIS = Province, FROM = Builder(not nessecairly owner, can be overlord)
@@ -2068,6 +2071,7 @@ fort_18th = {
 
 	modifier = {
 		fort_level = 8
+		local_defender_dice_roll_bonus = 1	#@ new. A fort backs up the troops standing on it.
 	}
 
 	# THIS = Province, FROM = Builder(not nessecairly owner, can be overlord)
