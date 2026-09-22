@@ -22,6 +22,7 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { exists = JAP }
+			adm_tech = 20							#@ new; real life Japan forms not after the game ends
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
