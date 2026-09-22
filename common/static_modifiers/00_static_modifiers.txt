@@ -617,7 +617,12 @@ base_values = {
 	#@ (mandate, stability, piety, karma), so this builds the same curve by hand.
 	recover_army_morale_speed = -0.1	#@ pivot
 	land_morale = -0.1					#@ pivot
-	manpower_recovery_speed = -0.1		#@ pivot
+	#@ manpower_recovery_speed = -0.1	pivot REMOVED. Manpower is the one place the
+	#@ pivot went too far: with max_attrition raised to 25 and local_hostile_attrition
+	#@ to 5, nearly every country was short of men. The army_tradition entry stays at
+	#@ 0.2 to offset the attrition, so manpower recovery now runs 0 at tradition 0 to
+	#@ +0.2 at 100 - no penalty at the bottom, double vanilla's reward at the top.
+	#@ The other six pivot entries are unchanged.
 	discipline = -0.05					#@ pivot
 	recover_navy_morale_speed = -0.1	#@ pivot
 	naval_morale = -0.15				#@ pivot
