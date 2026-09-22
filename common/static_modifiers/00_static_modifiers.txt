@@ -589,6 +589,13 @@ base_values = {
 											#@ local knowledge rather than as a combat bonus, so it never
 											#@ touches dice rolls. Vanilla's only static use of this is
 											#@ raiding_parties_modifier, also at 1, which is the idiomatic unit.
+	manpower_in_own_culture_provinces = 0.33	#@ new. Manpower in provinces of the PRIMARY culture only. Note this is
+											#@ not manpower_in_accepted_culture_provinces, which is defined as
+											#@ accepted-but-NOT-primary and would reward the opposite provinces.
+	development_cost_in_primary_culture = -0.05	#@ new. Developing your own heartland is cheaper than developing
+											#@ conquered land. Together these make a compact homeland worth
+											#@ something on its own terms, rather than the flat grant every
+											#@ one-province minor gets regardless of what it rules.
 	advisor_pool = 3
 	colonist_placement_chance = 0.1
 	free_leader_pool = 1
