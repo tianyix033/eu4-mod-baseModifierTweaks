@@ -143,7 +143,7 @@ coastal_sea = {
 tropical = {
 	local_colonial_growth = -10
 	supply_limit_modifier = -0.3
-	local_hostile_attrition = 2
+	local_hostile_attrition = 4				#@ was 2, raised to 4
 
 	local_development_cost = 0.05
 
@@ -153,7 +153,7 @@ tropical = {
 arctic = {
 	local_colonial_growth = -10
 	supply_limit_modifier = -0.4
-	local_hostile_attrition = 1
+	local_hostile_attrition = 3				#@ was 1, raised to 3
 
 	allowed_num_of_buildings = -1
 	local_development_cost = 0.5
@@ -164,7 +164,7 @@ arctic = {
 arid = {
 	local_colonial_growth = -10
 	supply_limit_modifier = -0.2
-	local_hostile_attrition = 1
+	local_hostile_attrition = 3				#@ was 1, raised to 3
 
 	local_development_cost = 0.1
 
@@ -172,7 +172,7 @@ arid = {
 }
 
 sea_zone = {
-	max_attrition = 5						#Maximum Attrition is 5
+	max_attrition = 10						#@ was 5, raised to 10
 }
 
 land_province = {
@@ -191,7 +191,7 @@ mild_winter = {
 }
 
 normal_winter = {
-	local_hostile_attrition = 2
+	local_hostile_attrition = 3				#@ was 2, raised to 3
 	supply_limit_modifier = -0.2
 	migration_cost = 0.1
 
@@ -199,7 +199,7 @@ normal_winter = {
 }
 
 severe_winter = {
-	local_hostile_attrition = 5				#@ was 3, raised to 5
+	local_hostile_attrition = 6				#@ was 3, raised to 6
 	supply_limit_modifier = -0.3
 	migration_cost = 0.2
 
@@ -223,7 +223,7 @@ normal_monsoon = {
 }
 
 severe_monsoon = {
-	local_hostile_attrition = 1.5
+	local_hostile_attrition = 2				#@ was 1.5, raised to 2
 	local_hostile_movement_speed = -0.50
 	local_friendly_movement_speed = -0.50
 
@@ -584,6 +584,11 @@ base_values = {
 	tolerance_heretic = -2
 	global_missionary_strength = 0.02
 	global_manpower = 2.0					#@was 10, downscaled to 2
+	hostile_attrition = 1					#@ new. Enemy armies lose an extra 1% of their strength per month in
+											#@ any province this country owns. Home advantage as supply and
+											#@ local knowledge rather than as a combat bonus, so it never
+											#@ touches dice rolls. Vanilla's only static use of this is
+											#@ raiding_parties_modifier, also at 1, which is the idiomatic unit.
 	advisor_pool = 3
 	colonist_placement_chance = 0.1
 	free_leader_pool = 1
