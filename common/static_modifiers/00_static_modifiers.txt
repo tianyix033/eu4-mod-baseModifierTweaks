@@ -575,12 +575,8 @@ base_values = {
 	merchants = 2							#Start with 2 merchants
 	diplomats = 2							#Start with 2 diplomats..
 	missionaries = 1						#1 missionary
-	army_tradition_decay = 0.03				#@ was 0.05. Lose 3% yearly. With the tradition pivot, 0 tradition is a
-										#@ real penalty rather than merely no bonus, and 5% decay pulled every
-										#@ nation at peace down into it as the default resting state.
-	navy_tradition_decay = 0.03				#@ was 0.05. Lose 3% yearly. With the tradition pivot, 0 tradition is a
-										#@ real penalty rather than merely no bonus, and 5% decay pulled every
-										#@ nation at peace down into it as the default resting state.
+	army_tradition_decay = 0.05				#lose 5% yearly
+	navy_tradition_decay = 0.05				#lose 5% yearly
 	prestige_decay = 0.05					#lose 5% prestige each year
 	tolerance_own = 3
 	diplomatic_upkeep = 4
