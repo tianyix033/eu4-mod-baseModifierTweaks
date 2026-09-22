@@ -1837,7 +1837,7 @@ spice_islands_modifier = { #Main entrepots of the Mollucas, point of origin for 
 	trade_goods_size = 3.0
 }
 
-skanemarket = { #Skï¿½nemarknaden - Biggest Herring Market in Europe
+skanemarket = { #Skånemarknaden - Biggest Herring Market in Europe
 	trade_goods_size = 2
 }
 
