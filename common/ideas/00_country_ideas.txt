@@ -3266,7 +3266,7 @@ MCH_ideas = {
 	}
 	manchu_eight_banners = {
 		amount_of_banners = 0.33			#@ was 0.25
-		discipline = 0.25					#@ new
+		discipline = 0.05					#@ new
 	}
 	the_manchu_alphabet = {
 		global_institution_spread = 0.25	#@ was 0.05
