@@ -656,24 +656,28 @@ MOS_ideas = {
 	}
 	free = yes		#will be added at load.
 
-	gatherers_of_tribute = {
-		global_tax_modifier = 0.10
-	}
 	legacy_of_dmitriy_donskoi = {
-		army_tradition = 0.5
+		army_tradition = 1				#@ was 0.5
 	}
 	seat_of_metropolitan_bishop  = {
 		tolerance_own = 1
 		global_missionary_strength = 0.01
 	}
-	pomestnoe_voisko = {
+	pomestnoe_voisko = {		
 		land_morale = 0.10
+		cavalry_power = 0.1			#@ new
+	}
+	gatherers_of_tribute = {		#@ moved from first one
+		global_tax_modifier = 0.10
+		global_autonomy = -0.05		#@ new. Lowers monthly autonomy; '-=' is not EU4 syntax.
 	}
 	strength_of_the_boyars = {
 		stability_cost_modifier = -0.2
+		global_unrest = -1			#@ new
  	}
 	zasechnaya_cherta = {
 		fort_maintenance_modifier = -0.20
+		defensiveness = 0.1			#@ new
 	}
 	descendants_of_byzantine_emperors = {
 		diplomatic_reputation = 1
@@ -703,6 +707,7 @@ RUS_ideas = {
 
 	land_of_the_rus = {
 		ae_impact = -0.15
+		land_attrition = -0.1		#@ new
 	}	
 	russian_artillery_yard = {
 		artillery_cost = -0.1
@@ -717,10 +722,10 @@ RUS_ideas = {
 	}
 	table_of_ranks = {
 		advisor_cost = -0.10
-		army_tradition = 0.25
+		army_tradition = 1			#@ was 0.25
 	}	
 	curriculum_of_the_cadet_corps = {
-		land_morale = 0.05
+		land_morale = 0.1			#@ was 0.05
 		fire_damage_received = -0.1
 	}
 	siberian_frontier = {						#@ this is moved to last to delay exploration and boost early combat
