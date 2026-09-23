@@ -887,6 +887,7 @@ army_tradition = {
 	manpower_recovery_speed = 0.2			#@ was 0.1; doubled, see base_values pivot
 	siege_ability = 0.05
 	discipline = 0.1			#@ new; doubled, see base_values pivot
+	global_regiment_recruit_speed = -0.5	#@ new
 	temples_influence = 0.1
 	mr_aristocrats_influence = 0.1
 	rr_girondists_influence = 0.1
@@ -1035,9 +1036,9 @@ negative_karma = {
 # Multiplied by Development/COUNTRY_DEVELOPMENT_SCALE
 country_development = {
 	horde_unity = -3
-	development_cost_modifier = -0.05		#@ new. This whole block is multiplied by total development divided by
+	development_cost_modifier = -0.06		#@ new. This whole block is multiplied by total development divided by
 											#@ COUNTRY_DEVELOPMENT_SCALE (600), so the discount grows with the size of
-											#@ the country: about -4% for France at 450 dev, -13% for Ming at 1600.
+											#@ the country.
 											#@ Monarch point income is close to flat regardless of size, so a large
 											#@ empire pays the same per province while having far more of them and
 											#@ more competing uses for the points. Vanilla used this block for
@@ -1047,6 +1048,7 @@ country_development = {
 											#@ bonus in the game lands on development_cost. Putting the size discount
 											#@ on the other factor keeps it meaningful at the margin without piling
 											#@ onto an already crowded multiplier at the extremes.
+	stability_cost_modifier = 0.12			#@ new
 }
 
 
@@ -2282,17 +2284,23 @@ expand_administation_modifier = {
 
 # At 100% over capacity, this modifier will be fully used
 over_governing_capacity_modifier = {
-	stability_cost_modifier = 1.0
-	ae_impact = 0.5
-	improve_relation_modifier = -0.5
-	advisor_cost = 1.0
+	stability_cost_modifier = 0.5			#@ was 1.0, eased. Scales with how far over capacity you are, so this
+											#@ is the value at 100% over, not at 1% over.
+	#@ ae_impact = 0.5						removed. Overreach should be an internal problem, not a diplomatic one.
+	#@ improve_relation_modifier = -0.5		removed for the same reason.
+	advisor_cost = 0.5						#@ was 1.0, eased.
 	monthly_militarized_society = -1
 	monthly_prussian_militarized_society_1 = -1
 	monthly_prussian_militarized_society_2 = -1
 	monthly_prussian_militarized_society_3 = -1
-	administrative_efficiency = -0.5
+	administrative_efficiency = -0.25		#@ was -0.5, eased.
 	monthly_ottoman_decadence = 2
 	monthly_authority_power = 0.5
+	yearly_absolutism = -1					#@ new. An empire it cannot administer cannot centralise either.
+	yearly_revolutionary_zeal = -1			#@ new. Same logic for the revolutionary equivalent.
+	idea_cost = 0.5							#@ new. Ideas are harder to push through a strained state.
+	reform_progress_growth = -0.5			#@ new.
+	global_rebel_suppression_efficiency = -0.25	#@ new. The state is stretched too thin to police itself.
 }
 
 #Scales with used capacity, being at full capacity means 100% of the modifier

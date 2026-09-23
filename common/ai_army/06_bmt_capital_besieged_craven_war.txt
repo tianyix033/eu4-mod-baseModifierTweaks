@@ -1,7 +1,6 @@
 # Stacks on top of 05. A craven ruler whose capital is threatened.
 #
-# Same condition as 05 plus the personality, so a craven ruler ends up at
-# Adds to file 05, so -20000 - 10000 = -30000 on their own capital - the
+# Same condition as 05 plus the personality. Adds to file 05, so -30000 on their own capital - the
 # deepest discount anywhere in this directory, which is the point. A coward
 # defends his throne and lets the border burn.
 #
