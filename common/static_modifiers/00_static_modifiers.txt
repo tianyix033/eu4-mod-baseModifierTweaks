@@ -2296,6 +2296,7 @@ over_governing_capacity_modifier = {
 	administrative_efficiency = -0.25		#@ was -0.5, eased.
 	monthly_ottoman_decadence = 2
 	monthly_authority_power = 0.5
+	yearly_corruption = 0.5					#@ new
 	yearly_absolutism = -1					#@ new. An empire it cannot administer cannot centralise either.
 	yearly_revolutionary_zeal = -1			#@ new. Same logic for the revolutionary equivalent.
 	idea_cost = 0.5							#@ new. Ideas are harder to push through a strained state.
