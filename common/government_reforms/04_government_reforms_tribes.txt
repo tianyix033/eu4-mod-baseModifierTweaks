@@ -44,14 +44,16 @@ steppe_horde = {
 		global_manpower_modifier = 0.2		
 		land_forcelimit_modifier = 0.2		
 		diplomatic_reputation = -2		#@ warlike bad reputation
-		land_maintenance_modifier = -0.2	#@ soldiers can find other ways to feed themselves
-		army_tradition_decay = -0.01		#@ people naturally more physically active
+		land_maintenance_modifier = -0.33	#@ soldiers can find other ways to feed themselves
+		army_tradition_decay = -0.02		#@ people naturally more physically active
 		cavalry_cost = -0.33				#@ new, too many horses
 		development_cost = 0.1				#@ compensation nerf
 		global_tax_modifier = -0.5			#@ hits hard, represents low governance
 		#@ years_of_nationalism = -5
 		#@ reinforce_cost_modifier = -0.5
 		reinforce_speed = 0.2				#@ corresponds to faster movement speed
+		global_monthly_devastation = -0.1		#@ recovers faster from war since, well, there's not much to be damaged.
+												#@ global_devastation_modifier is not a real modifier; this is the additive one.
 	}
 	custom_attributes = {
 		enables_horde_idea_group = yes
@@ -86,13 +88,15 @@ great_mongol_state_reform = {
 		global_manpower_modifier = 0.2		
 		land_forcelimit_modifier = 0.2		
 		diplomatic_reputation = -2		#@ warlike bad reputation
-		land_maintenance_modifier = -0.2	#@ soldiers can find other ways to feed themselves
-		army_tradition_decay = -0.01		#@ people naturally more physically active
+		land_maintenance_modifier = -0.33	#@ soldiers can find other ways to feed themselves
+		army_tradition_decay = -0.02		#@ people naturally more physically active
 		cavalry_cost = -0.33				#@ new, too many horses
 		development_cost = 0.1				#@ compensation nerf
 		global_tax_modifier = -0.5			#@ hits hard, represents low governance
 		#@ reinforce_cost_modifier = -0.5
 		reinforce_speed = 0.2				#@ corresponds to faster movement speed
+		global_monthly_devastation = -0.1		#@ recovers faster from war since, well, there's not much to be damaged.
+												#@ global_devastation_modifier is not a real modifier; this is the additive one.
 		years_of_nationalism = -5
 		may_establish_frontier = yes
 	}
