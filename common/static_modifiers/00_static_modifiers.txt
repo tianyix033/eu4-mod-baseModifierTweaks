@@ -1035,6 +1035,18 @@ negative_karma = {
 # Multiplied by Development/COUNTRY_DEVELOPMENT_SCALE
 country_development = {
 	horde_unity = -3
+	development_cost_modifier = -0.05		#@ new. This whole block is multiplied by total development divided by
+											#@ COUNTRY_DEVELOPMENT_SCALE (600), so the discount grows with the size of
+											#@ the country: about -4% for France at 450 dev, -13% for Ming at 1600.
+											#@ Monarch point income is close to flat regardless of size, so a large
+											#@ empire pays the same per province while having far more of them and
+											#@ more competing uses for the points. Vanilla used this block for
+											#@ horde_unity alone.
+											#@ Uses development_cost_modifier rather than development_cost on purpose:
+											#@ the two are separate multiplicative factors, and almost every other
+											#@ bonus in the game lands on development_cost. Putting the size discount
+											#@ on the other factor keeps it meaningful at the margin without piling
+											#@ onto an already crowded multiplier at the extremes.
 }
 
 

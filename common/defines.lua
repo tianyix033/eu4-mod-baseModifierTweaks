@@ -1774,7 +1774,7 @@ NAI = {
 
 	DEBASE_THRESHOLD = 10000,-- AI will not debase if it has more gold than this.
 
-	DEVELOPMENT_CAP_BASE = 10,	-- AI will not develop provinces that have more development than this or DEVELOPMENT_CAP_MULT*original development (whichever is bigger)
+	DEVELOPMENT_CAP_BASE = 15,	--@ was 10. The AI refuses to develop a province past the greater of this and DEVELOPMENT_CAP_MULT x its original development, whatever the cost. Without raising it the development_cost discount in country_development would have been a player-only buff, since the AI would keep hitting the cap instead of the price. MULT stays at 2 on purpose - the aim is a wide empire improving many provinces, not one province becoming a monster.
 	DEVELOPMENT_CAP_MULT = 2,
 
 	PEACE_BASE_RELUCTANCE = 0, -- AI base stubbornness to refuse peace (always applied)
