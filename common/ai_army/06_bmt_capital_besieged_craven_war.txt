@@ -1,0 +1,37 @@
+# Stacks on top of 05. A craven ruler whose capital is threatened.
+#
+# Same condition as 05 plus the personality, so a craven ruler ends up at
+# 5.0 x 1.6 = 8.0 on their own capital - the highest weight anywhere in this
+# directory, which is the point. A coward defends his throne and lets the
+# border burn.
+#
+# Country-scope triggers have to be wrapped in ROOT = { } here, because the
+# surrounding scope is the province being evaluated.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 1.6
+			modifier = {
+				owned_by = ROOT
+				is_capital = yes
+				ROOT = { ruler_has_personality = craven_personality }
+				OR = {
+					NOT = {
+						OR = {
+							sieged_by = ROOT
+							controlled_by = ROOT
+						}
+					}
+					AND = {
+						has_siege = yes
+						NOT = { units_in_province = ROOT }
+					}
+				}
+			}
+		}
+	}
+}

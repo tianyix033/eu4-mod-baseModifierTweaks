@@ -1,0 +1,32 @@
+# My capital is threatened and I have nobody standing in it.
+#
+# Highest weight in the directory. An AI that lets its capital fall while it
+# counter-sieges someone else's backwater is the behaviour this whole set
+# exists to stop.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 5.0
+			modifier = {
+				owned_by = ROOT
+				is_capital = yes
+				OR = {
+					NOT = {
+						OR = {
+							sieged_by = ROOT
+							controlled_by = ROOT
+						}
+					}
+					AND = {
+						has_siege = yes
+						NOT = { units_in_province = ROOT }
+					}
+				}
+			}
+		}
+	}
+}

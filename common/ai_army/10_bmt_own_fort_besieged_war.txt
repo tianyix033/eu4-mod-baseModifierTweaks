@@ -1,0 +1,40 @@
+# A fort I or my subject holds, under siege, with none of my troops in it.
+#
+# This is the file that pairs with the local_defender_dice_roll_bonus we put on
+# fort_15th through fort_18th. The dice bonus rewards standing on your forts;
+# this makes the AI actually go and stand on them.
+#
+# country_or_subject_holds rather than owned_by, so a march or vassal holding
+# the fort still counts - the AI should relieve a subject's fortress.
+#
+# Base lowered from 3.0 to 2.4 because files 11 and 12 now add on top of this
+# for forts that are worth more - prosperous ones and ones on defensible
+# ground. A plain fort on flat, poor land sits slightly below where it was; a
+# fort that is actually worth holding ends up well above.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 2.4
+			modifier = {
+				country_or_subject_holds = ROOT
+				fort_level = 1
+				OR = {
+					NOT = {
+						OR = {
+							sieged_by = ROOT
+							controlled_by = ROOT
+						}
+					}
+					AND = {
+						has_siege = yes
+						NOT = { units_in_province = ROOT }
+					}
+				}
+			}
+		}
+	}
+}

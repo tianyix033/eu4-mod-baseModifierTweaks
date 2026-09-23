@@ -1,0 +1,37 @@
+# Stacks on top of 05. The Emperor of China's capital is threatened.
+#
+# Losing the capital is worse for the Emperor than for anyone else: mandate
+# falls with occupied and devastated land, and the whole Celestial Empire
+# apparatus hangs off it. MandateOfHeavenTweaks already makes losing control of
+# key cities bite through lost_control_of_xian, and this is the military half -
+# the Emperor's armies should come home rather than press a siege elsewhere.
+#
+# 5.0 x 1.5 = 7.5 on the Emperor's own capital.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 1.5
+			modifier = {
+				owned_by = ROOT
+				is_capital = yes
+				ROOT = { is_emperor_of_china = yes }
+				OR = {
+					NOT = {
+						OR = {
+							sieged_by = ROOT
+							controlled_by = ROOT
+						}
+					}
+					AND = {
+						has_siege = yes
+						NOT = { units_in_province = ROOT }
+					}
+				}
+			}
+		}
+	}
+}

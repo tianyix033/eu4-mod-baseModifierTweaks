@@ -1,0 +1,44 @@
+# Stacks on top of 10. The late-game half of the pair started in file 11.
+#
+# From the Age of Absolutism the bar rises from 12 to 22, because that is when
+# dev-pushing and institution embracement really start inflating provinces. The
+# two files are mutually exclusive by age, so exactly one of them can ever fire
+# and the multiplier never doubles up.
+#
+# If a campaign shows the AI treating half its forts as prosperous by 1750,
+# raise this number rather than adding a third tier - the point is a relative
+# ranking, not an absolute standard.
+#
+# 2.4 x 1.4 = 3.36 for a rich besieged fort.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 1.4
+			modifier = {
+				country_or_subject_holds = ROOT
+				fort_level = 1
+				development = 22
+				OR = {
+					current_age = age_of_absolutism
+					current_age = age_of_revolutions
+				}
+				OR = {
+					NOT = {
+						OR = {
+							sieged_by = ROOT
+							controlled_by = ROOT
+						}
+					}
+					AND = {
+						has_siege = yes
+						NOT = { units_in_province = ROOT }
+					}
+				}
+			}
+		}
+	}
+}

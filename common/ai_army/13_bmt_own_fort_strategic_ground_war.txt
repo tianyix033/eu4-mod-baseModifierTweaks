@@ -1,0 +1,56 @@
+# Stacks on top of 10. A besieged fort of mine standing on ground that is
+# worth holding in itself.
+#
+# Three sources of extra defensive value, all of which make the fort harder to
+# retake once lost and so more worth relieving now:
+#
+#   hills      local_defensiveness 0.10, terrain defence +1
+#   mountain   local_defensiveness 0.25, terrain defence +2
+#   highlands  local_defensiveness 0.10, terrain defence +1
+#   ramparts   local_defensiveness 0.15, local_hostile_attrition 1,
+#              and local_defender_dice_roll_bonus 1 in vanilla
+#
+# Terrain names are the category names from map/terrain.txt. Deliberately not
+# included: forest, woods, jungle, marsh and glacier. They all carry terrain
+# defence +1 but no local_defensiveness at all, so they help the battle and not
+# the siege - and a fort in a jungle is not a Pyrenean pass.
+#
+# Rivers cannot be included. River crossing is a property of the ADJACENCY
+# between two provinces, not of a province, and there is no trigger for it -
+# nothing in the trigger list matches, and the only river-named scripted
+# trigger in the game is about trade estuaries.
+#
+# 2.4 x 1.5 = 3.6, or 5.04 for high ground that is also prosperous.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 1.5
+			modifier = {
+				country_or_subject_holds = ROOT
+				fort_level = 1
+				OR = {
+					has_terrain = hills
+					has_terrain = mountain
+					has_terrain = highlands
+					has_building = ramparts
+				}
+				OR = {
+					NOT = {
+						OR = {
+							sieged_by = ROOT
+							controlled_by = ROOT
+						}
+					}
+					AND = {
+						has_siege = yes
+						NOT = { units_in_province = ROOT }
+					}
+				}
+			}
+		}
+	}
+}

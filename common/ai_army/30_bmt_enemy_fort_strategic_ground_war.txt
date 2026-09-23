@@ -1,0 +1,41 @@
+# An enemy-held fort on defensible ground.
+#
+# The mirror of file 13. The same terrain that makes my fort worth relieving
+# makes the enemy's fort worth taking - a mountain fortress in their hands is
+# the thing that stops my army going any further, and it is worth more to me
+# than an open province behind it.
+#
+# Weighted well below the defensive files on purpose. This is a preference
+# between offensive targets, not a reason to go on the offensive.
+#
+# Note this is the only OFFENSIVE weighting in the directory besides
+# 15_cores_and_claims. If the AI starts throwing itself at mountain forts it
+# cannot take, this is the file to cut first.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 1.3
+			modifier = {
+				fort_level = 1
+				owner = { war_with = ROOT }
+				NOT = {
+					OR = {
+						owned_by = ROOT
+						controlled_by = ROOT
+						country_or_subject_holds = ROOT
+					}
+				}
+				OR = {
+					has_terrain = hills
+					has_terrain = mountain
+					has_terrain = highlands
+					has_building = ramparts
+				}
+			}
+		}
+	}
+}

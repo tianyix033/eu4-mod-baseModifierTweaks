@@ -1,0 +1,27 @@
+# Any province of mine under siege with none of my troops in it.
+#
+# The general case beneath the capital and fort files. Weighted lowest of the
+# defensive three, so a besieged fort still outranks a besieged open province
+# and the capital outranks both.
+#
+# This is the same instinct as IMPORANT_PROVINCE_THRESHOLD, which we lowered
+# from 0.05 to 0.01 so that poor border provinces register as worth defending
+# at all. That define decides whether the AI considers a province important;
+# this decides where the army goes once it has.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 2.0
+			modifier = {
+				owned_by = ROOT
+				has_siege = yes
+				NOT = { units_in_province = ROOT }
+				NOT = { sieged_by = ROOT }
+			}
+		}
+	}
+}

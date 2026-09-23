@@ -1,0 +1,48 @@
+# Stacks on top of 10. A besieged fort of mine in a province that is rich
+# FOR ITS TIME - early game half of the pair.
+#
+# Development inflates enormously over a campaign, so a fixed bar means
+# different things in 1450 and 1750. Measured on the 1444 map: median province
+# is 6 development, 90th percentile is 12, 95th is 14, and 20+ is the 99th
+# percentile - 37 provinces out of 3270. A flat threshold of 20 would never
+# fire for the first century and then fire everywhere.
+#
+# So: 12 through the Ages of Discovery and Reformation, 22 from Absolutism
+# onward (see file 12). Both aim at roughly the top tenth of provinces at the
+# time, which is what "prosperous" ought to mean.
+#
+# current_age is scoped "anywhere", so it needs no ROOT wrapper.
+#
+# 2.4 x 1.4 = 3.36 for a rich besieged fort.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 1.4
+			modifier = {
+				country_or_subject_holds = ROOT
+				fort_level = 1
+				development = 12
+				OR = {
+					current_age = age_of_discovery
+					current_age = age_of_reformation
+				}
+				OR = {
+					NOT = {
+						OR = {
+							sieged_by = ROOT
+							controlled_by = ROOT
+						}
+					}
+					AND = {
+						has_siege = yes
+						NOT = { units_in_province = ROOT }
+					}
+				}
+			}
+		}
+	}
+}

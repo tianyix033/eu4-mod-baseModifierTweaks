@@ -1,0 +1,24 @@
+# An island with no land connection to its own owner's capital.
+#
+# Note is_in_capital_area is defined relative to the province's OWNER, not to
+# ROOT - "connected to the capital of its owner". So this reads as "an isolated
+# overseas holding", which is exactly the sort of undefended scrap an AI will
+# load an army onto boats for while the real war is lost at home.
+#
+# Strongest negative in the set, because an amphibious detour is the most
+# expensive way to waste a stack.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = -1.0
+			modifier = {
+				island = yes
+				is_in_capital_area = no
+			}
+		}
+	}
+}

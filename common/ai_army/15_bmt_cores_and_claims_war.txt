@@ -1,0 +1,33 @@
+# A province held by someone I am at war with, that I have a core or a claim on.
+#
+# This is the "fight for the objective" lever. The AI already values cores and
+# claims heavily at the PEACE TABLE - PEACE_TERMS_PROVINCE_CORE_MULT is 3.0 and
+# _CLAIM_MULT is 2.0 - but nothing carried that preference into where its
+# armies actually march. This does.
+#
+# It also compounds with the permanent claims that mission trees hand out,
+# which is how the game steers expansion in the first place.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 3.0
+			modifier = {
+				owner = { war_with = ROOT }
+				NOT = {
+					OR = {
+						owned_by = ROOT
+						controlled_by = ROOT
+					}
+				}
+				OR = {
+					is_core = ROOT
+					is_claim = ROOT
+				}
+			}
+		}
+	}
+}
