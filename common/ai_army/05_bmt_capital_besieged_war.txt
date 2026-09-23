@@ -1,6 +1,7 @@
 # My capital is threatened and I have nobody standing in it.
 #
-# Highest weight in the directory. An AI that lets its capital fall while it
+# Strongest pull in the directory - the score is a COST, so the lowest factor
+# wins. An AI that lets its capital fall while it
 # counter-sieges someone else's backwater is the behaviour this whole set
 # exists to stop.
 
@@ -10,7 +11,7 @@ province = {
 			is_at_war = yes
 		}
 		eval_multiply = {
-			factor = 5.0
+			factor = 0.2
 			modifier = {
 				owned_by = ROOT
 				is_capital = yes

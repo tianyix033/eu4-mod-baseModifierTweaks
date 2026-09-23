@@ -7,10 +7,10 @@
 # country_or_subject_holds rather than owned_by, so a march or vassal holding
 # the fort still counts - the AI should relieve a subject's fortress.
 #
-# Base lowered from 3.0 to 2.4 because files 11 and 12 now add on top of this
-# for forts that are worth more - prosperous ones and ones on defensible
-# ground. A plain fort on flat, poor land sits slightly below where it was; a
-# fort that is actually worth holding ends up well above.
+# Files 11, 12 and 13 multiply further on top of this for forts that are worth
+# more - prosperous ones and ones on defensible ground. Since the score is a
+# cost, each of those drives it lower still. A plain fort on flat, poor land
+# stops at 0.42; a fort actually worth holding gets well under that.
 
 province = {
 	war = {
@@ -18,7 +18,7 @@ province = {
 			is_at_war = yes
 		}
 		eval_multiply = {
-			factor = 2.4
+			factor = 0.42
 			modifier = {
 				country_or_subject_holds = ROOT
 				fort_level = 1

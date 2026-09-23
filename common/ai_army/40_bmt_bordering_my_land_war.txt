@@ -1,0 +1,38 @@
+# An enemy province that directly borders land I or my subjects hold.
+#
+# The Oirat-marches-through-Tibet-to-besiege-Yunnan file. The distance penalty
+# in 80 only fires for provinces outside BOTH my region and my continent, so a
+# target that is absurdly far but still on the same landmass slipped through
+# untouched. Rather than widen that penalty and punish every legitimate
+# cross-region war, this rewards the front line directly.
+#
+# any_neighbor_province is the vanilla idiom for this - buildings use it in
+# exactly this shape. It walks a province's own neighbours, typically three to
+# eight of them, so it is cheap.
+#
+# Weighted strongly on purpose - 0.55 is among the lowest costs here. A
+# province touching my border should beat a richer one four regions away
+# almost every time; that is what a front is.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 0.55
+			modifier = {
+				owner = { war_with = ROOT }
+				NOT = {
+					OR = {
+						owned_by = ROOT
+						controlled_by = ROOT
+					}
+				}
+				any_neighbor_province = {
+					country_or_subject_holds = ROOT
+				}
+			}
+		}
+	}
+}

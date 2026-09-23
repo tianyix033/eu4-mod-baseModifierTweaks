@@ -9,7 +9,7 @@
 # raise this number rather than adding a third tier - the point is a relative
 # ranking, not an absolute standard.
 #
-# 2.4 x 1.4 = 3.36 for a rich besieged fort.
+# 0.42 x 0.71 = 0.30 for a rich besieged fort.
 
 province = {
 	war = {
@@ -17,7 +17,7 @@ province = {
 			is_at_war = yes
 		}
 		eval_multiply = {
-			factor = 1.4
+			factor = 0.71
 			modifier = {
 				country_or_subject_holds = ROOT
 				fort_level = 1

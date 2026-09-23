@@ -1,7 +1,7 @@
 # Stacks on top of 05. A craven ruler whose capital is threatened.
 #
 # Same condition as 05 plus the personality, so a craven ruler ends up at
-# 5.0 x 1.6 = 8.0 on their own capital - the highest weight anywhere in this
+# 0.2 x 0.625 = 0.125 on their own capital - the lowest cost anywhere in this
 # directory, which is the point. A coward defends his throne and lets the
 # border burn.
 #
@@ -14,7 +14,7 @@ province = {
 			is_at_war = yes
 		}
 		eval_multiply = {
-			factor = 1.6
+			factor = 0.625
 			modifier = {
 				owned_by = ROOT
 				is_capital = yes

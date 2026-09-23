@@ -6,7 +6,7 @@
 # key cities bite through lost_control_of_xian, and this is the military half -
 # the Emperor's armies should come home rather than press a siege elsewhere.
 #
-# 5.0 x 1.5 = 7.5 on the Emperor's own capital.
+# 0.2 x 0.67 = 0.134 on the Emperor's own capital.
 
 province = {
 	war = {
@@ -14,7 +14,7 @@ province = {
 			is_at_war = yes
 		}
 		eval_multiply = {
-			factor = 1.5
+			factor = 0.67
 			modifier = {
 				owned_by = ROOT
 				is_capital = yes

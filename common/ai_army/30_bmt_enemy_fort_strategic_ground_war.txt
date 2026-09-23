@@ -5,7 +5,7 @@
 # the thing that stops my army going any further, and it is worth more to me
 # than an open province behind it.
 #
-# Weighted well below the defensive files on purpose. This is a preference
+# The weakest pull in the directory at 0.77, on purpose. This is a preference
 # between offensive targets, not a reason to go on the offensive.
 #
 # Note this is the only OFFENSIVE weighting in the directory besides
@@ -18,7 +18,7 @@ province = {
 			is_at_war = yes
 		}
 		eval_multiply = {
-			factor = 1.3
+			factor = 0.77
 			modifier = {
 				fort_level = 1
 				owner = { war_with = ROOT }

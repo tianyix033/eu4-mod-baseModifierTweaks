@@ -1,0 +1,53 @@
+# Targets not worth marching to: too far away, or an isolated island.
+#
+# The only rule here with a factor ABOVE 1. The score is a cost, so 2.5 makes
+# these provinces two and a half times as expensive to march to.
+#
+# NEVER use a negative factor. An earlier version of this file used -0.8, which
+# multiplied a large positive cost into a large NEGATIVE one - the best score
+# possible - and sent armies straight to the provinces it was meant to forbid.
+# That is what put a Jianzhou army in Oirat's capital: 182094 x -5 = -910469,
+# the lowest score on the map by a factor of two hundred.
+#
+# Both rules share this file so the two penalties cannot compound unexpectedly.
+#
+# Distant: an enemy province in neither my region nor my continent. Colonial
+# nations are exempt, since expansion far from the overlord is their whole
+# purpose.
+#
+# Isolated island: note is_in_capital_area is defined relative to the
+# province's OWNER - "connected to the capital of its owner" - so this reads as
+# an overseas scrap its own ruler cannot easily reinforce. Exactly the sort of
+# thing an AI loads a stack onto boats for while losing the real war at home.
+
+province = {
+	war = {
+		active = {
+			is_at_war = yes
+		}
+		eval_multiply = {
+			factor = 2.5
+			modifier = {
+				OR = {
+					AND = {
+						owner = { war_with = ROOT }
+						NOT = { owned_by = ROOT }
+						NOT = {
+							AND = {
+								OR = {
+									region = ROOT
+									continent = ROOT
+								}
+								ROOT = { is_colonial_nation = no }
+							}
+						}
+					}
+					AND = {
+						island = yes
+						is_in_capital_area = no
+					}
+				}
+			}
+		}
+	}
+}
