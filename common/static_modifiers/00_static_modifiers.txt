@@ -523,7 +523,11 @@ local_autonomy_trade_company = {
 }
 
 recent_uprising = {
-	local_unrest = -100
+	local_unrest = -10						#@ was -100. Applied for RECENT_UPRISING_IN_MONTHS (120) after a
+											#@ rebellion is put down. At -100 it was a hard floor that made every
+											#@ other unrest source in that province irrelevant for a decade. At -10
+											#@ a beaten province is calmed, not immunised, so a badly governed one
+											#@ can still stew. Duration deliberately left at ten years.
 	picture = "recent_uprising"
 }
 
@@ -1032,6 +1036,7 @@ negative_karma = {
 country_development = {
 	horde_unity = -3
 }
+
 
 # Multiplied by current Legitimacy - 50
 legitimacy = {
