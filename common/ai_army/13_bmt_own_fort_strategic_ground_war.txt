@@ -20,16 +20,17 @@
 # nothing in the trigger list matches, and the only river-named scripted
 # trigger in the game is about trade estuaries.
 #
-# 0.42 x 0.67 = 0.28, or 0.20 for high ground that is also prosperous.
+# -10000 - 3000 = -13000, or -16000 for high ground that is also prosperous.
 
 province = {
 	war = {
 		active = {
 			is_at_war = yes
 		}
-		eval_multiply = {
-			factor = 0.67
+		eval_add = {
+			factor = 0
 			modifier = {
+				factor = -3000
 				country_or_subject_holds = ROOT
 				fort_level = 1
 				OR = {

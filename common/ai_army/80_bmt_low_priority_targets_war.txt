@@ -1,15 +1,16 @@
 # Targets not worth marching to: too far away, or an isolated island.
 #
-# The only rule here with a factor ABOVE 1. The score is a cost, so 2.5 makes
-# these provinces two and a half times as expensive to march to.
+# The only rule here that ADDS. The score is a cost, so +20000 makes these
+# provinces expensive to march to - comparable to the engine's own
+# 'wrong region' penalty of +9000 to +20000.
 #
-# NEVER use a negative factor. An earlier version of this file used -0.8, which
-# multiplied a large positive cost into a large NEGATIVE one - the best score
-# possible - and sent armies straight to the provinces it was meant to forbid.
-# That is what put a Jianzhou army in Oirat's capital: 182094 x -5 = -910469,
-# the lowest score on the map by a factor of two hundred.
+# This used to be a multiplier, and that was the whole problem. Every additive
+# term in the score is a penalty - over supply limit, not focal province,
+# distance - so multiplying scaled the penalties, and a negative multiplier
+# turned the entire penalty stack into a reward. The worse a province was, the
+# more the army wanted it. Addition cannot invert anything.
 #
-# Both rules share this file so the two penalties cannot compound unexpectedly.
+# Both rules share this file so their penalties stay in one place.
 #
 # Distant: an enemy province in neither my region nor my continent. Colonial
 # nations are exempt, since expansion far from the overlord is their whole
@@ -25,9 +26,10 @@ province = {
 		active = {
 			is_at_war = yes
 		}
-		eval_multiply = {
-			factor = 2.5
+		eval_add = {
+			factor = 0
 			modifier = {
+				factor = 20000
 				OR = {
 					AND = {
 						owner = { war_with = ROOT }

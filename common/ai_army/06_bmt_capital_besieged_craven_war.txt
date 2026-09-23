@@ -1,9 +1,9 @@
 # Stacks on top of 05. A craven ruler whose capital is threatened.
 #
 # Same condition as 05 plus the personality, so a craven ruler ends up at
-# 0.2 x 0.625 = 0.125 on their own capital - the lowest cost anywhere in this
-# directory, which is the point. A coward defends his throne and lets the
-# border burn.
+# Adds to file 05, so -20000 - 10000 = -30000 on their own capital - the
+# deepest discount anywhere in this directory, which is the point. A coward
+# defends his throne and lets the border burn.
 #
 # Country-scope triggers have to be wrapped in ROOT = { } here, because the
 # surrounding scope is the province being evaluated.
@@ -13,9 +13,10 @@ province = {
 		active = {
 			is_at_war = yes
 		}
-		eval_multiply = {
-			factor = 0.625
+		eval_add = {
+			factor = 0
 			modifier = {
+				factor = -10000
 				owned_by = ROOT
 				is_capital = yes
 				ROOT = { ruler_has_personality = craven_personality }

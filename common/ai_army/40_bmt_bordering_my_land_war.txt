@@ -10,18 +10,19 @@
 # exactly this shape. It walks a province's own neighbours, typically three to
 # eight of them, so it is cheap.
 #
-# Weighted strongly on purpose - 0.55 is among the lowest costs here. A
-# province touching my border should beat a richer one four regions away
-# almost every time; that is what a front is.
+# Weighted strongly on purpose at -6000. A province touching my border should
+# beat a richer one four regions away almost every time; that is what a front
+# is.
 
 province = {
 	war = {
 		active = {
 			is_at_war = yes
 		}
-		eval_multiply = {
-			factor = 0.55
+		eval_add = {
+			factor = 0
 			modifier = {
+				factor = -6000
 				owner = { war_with = ROOT }
 				NOT = {
 					OR = {

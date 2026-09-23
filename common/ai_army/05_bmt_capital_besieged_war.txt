@@ -1,7 +1,7 @@
 # My capital is threatened and I have nobody standing in it.
 #
-# Strongest pull in the directory - the score is a COST, so the lowest factor
-# wins. An AI that lets its capital fall while it
+# Strongest pull in the directory at -20000. The score is a COST and lowest
+# wins, so we SUBTRACT to attract. An AI that lets its capital fall while it
 # counter-sieges someone else's backwater is the behaviour this whole set
 # exists to stop.
 
@@ -10,9 +10,10 @@ province = {
 		active = {
 			is_at_war = yes
 		}
-		eval_multiply = {
-			factor = 0.2
+		eval_add = {
+			factor = 0
 			modifier = {
+				factor = -20000
 				owned_by = ROOT
 				is_capital = yes
 				OR = {

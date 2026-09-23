@@ -1,7 +1,7 @@
 # Any province of mine under siege with none of my troops in it.
 #
 # The general case beneath the capital and fort files. Weakest pull of the
-# defensive three - 0.5 against 0.42 and 0.2 - so a besieged fort still
+# defensive three - -5000 against -10000 and -20000 - so a besieged fort still
 # outranks a besieged open province, and the capital outranks both.
 #
 # This is the same instinct as IMPORANT_PROVINCE_THRESHOLD, which we lowered
@@ -14,9 +14,10 @@ province = {
 		active = {
 			is_at_war = yes
 		}
-		eval_multiply = {
-			factor = 0.5
+		eval_add = {
+			factor = 0
 			modifier = {
+				factor = -5000
 				owned_by = ROOT
 				has_siege = yes
 				NOT = { units_in_province = ROOT }

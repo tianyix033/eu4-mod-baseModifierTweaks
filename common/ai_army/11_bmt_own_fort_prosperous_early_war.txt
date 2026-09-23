@@ -13,16 +13,17 @@
 #
 # current_age is scoped "anywhere", so it needs no ROOT wrapper.
 #
-# 0.42 x 0.71 = 0.30 for a rich besieged fort.
+# -10000 - 3000 = -13000 for a rich besieged fort.
 
 province = {
 	war = {
 		active = {
 			is_at_war = yes
 		}
-		eval_multiply = {
-			factor = 0.71
+		eval_add = {
+			factor = 0
 			modifier = {
+				factor = -3000
 				country_or_subject_holds = ROOT
 				fort_level = 1
 				development = 12

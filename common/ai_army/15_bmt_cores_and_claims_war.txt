@@ -13,9 +13,10 @@ province = {
 		active = {
 			is_at_war = yes
 		}
-		eval_multiply = {
-			factor = 0.33
+		eval_add = {
+			factor = 0
 			modifier = {
+				factor = -8000
 				owner = { war_with = ROOT }
 				NOT = {
 					OR = {
