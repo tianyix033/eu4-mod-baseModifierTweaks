@@ -15555,7 +15555,7 @@ MOR_ideas = {
 	}
 	mor_pirate_republics = {
 		privateer_efficiency = 0.15
-		naval_tradition = 0.5		#@ new
+		navy_tradition = 0.5		#@ new. naval_tradition is not a modifier; the name is navy_tradition.
 	}
 	mor_slave_soldiers = {
 		land_maintenance_modifier = -0.05

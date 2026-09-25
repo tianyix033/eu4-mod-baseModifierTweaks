@@ -700,20 +700,29 @@ negative_stability = {
 positive_mandate = {	# 100% strength at 100 mandate, 0% at 50 mandate
 	global_unrest = -2.5
 	all_estate_loyalty_equilibrium = 0.1
-	war_exhaustion = -0.05
+	#@ war_exhaustion = -0.05
+	land_morale = 0.1			#@ new
+	administrative_efficiency = 0.05		#@ new
 }
 
+#@ to compensate for higher starting dev, negative mandate will 
+#@ have stronger, more lasting negative effects
 negative_mandate = { # By default, starts at 50 mandate, 100% strength at 0 mandate
 	meritocracy = -2
 	reduced_liberty_desire = -30
-	# global_trade_goods_size_modifier = -0.5	@ too harsh and uncalled for
+	# global_trade_goods_size_modifier = -0.5	@ too harsh and unreasonable
 	# fire_damage_received = 0.5 	@ why do you just receive more damage? doesn't make sense
 	# shock_damage_received = 0.5	@ same
+	global_tax_modifier = -0.5					#@ new, about half as strong as original
 	global_unrest = 5
 	all_estate_loyalty_equilibrium = -0.2	#@ new and serves as parallel to positive mandate
 	# mercenary_manpower = -0.5		@ late stage Qing begs to differ
 	global_manpower_modifier = -0.5
+	global_autonomy = 0.1				#@ new
+	land_morale = -0.2					#@ new
+	global_spy_defence = -0.25			#@ new
 	yearly_corruption = 0.25			#@ significant problem in history
+	inflation_reduction = -0.1
 }
 
 lost_mandate_of_heaven = {	#@ I want this to match the 0 mandate state
@@ -2041,7 +2050,8 @@ expansion_focus_modifier = {
 	infantry_power = 0.1				#@ new
 	global_manpower_modifier = 0.1		#@ new
 	galley_power = 0.2					#@ new
-	nobles_loyalty_equilibrium = 0.1	#@ new
+	nobles_loyalty_modifier = 0.1		#@ new. nobles_loyalty_equilibrium is not a modifier - only
+										#@ all_estate_loyalty_equilibrium exists, with no per-estate variant.
 	nobles_influence_modifier = 0.1		#@ new
 	
 	#all_estate_loyalty_equilibrium = -0.1		@ removed
