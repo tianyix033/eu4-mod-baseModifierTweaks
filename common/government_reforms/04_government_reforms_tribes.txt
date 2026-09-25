@@ -52,6 +52,11 @@ steppe_horde = {
 		#@ years_of_nationalism = -5
 		#@ reinforce_cost_modifier = -0.5
 		war_exhaustion = -0.5				#@ new
+		land_attrition = -0.25				#@ new. They know the country. The other half of this is on the
+											#@ terrain itself - steppe, desert and coastal desert each carry
+											#@ local_hostile_attrition 2 in HistoryCorrections/map/terrain.txt, so
+											#@ an invader grinds down where the locals do not. Government type
+											#@ should not decide attrition; the ground should.
 		reinforce_speed = 0.2				#@ corresponds to faster movement speed
 		global_monthly_devastation = -0.1		#@ recovers faster from war since, well, there's not much to be damaged.
 												#@ global_devastation_modifier is not a real modifier; this is the additive one.
@@ -96,6 +101,11 @@ great_mongol_state_reform = {
 		global_tax_modifier = -0.5			#@ hits hard, represents low governance
 		#@ reinforce_cost_modifier = -0.5
 		war_exhaustion = -0.5				#@ new
+		land_attrition = -0.25				#@ new. They know the country. The other half of this is on the
+											#@ terrain itself - steppe, desert and coastal desert each carry
+											#@ local_hostile_attrition 2 in HistoryCorrections/map/terrain.txt, so
+											#@ an invader grinds down where the locals do not. Government type
+											#@ should not decide attrition; the ground should.
 		reinforce_speed = 0.2				#@ corresponds to faster movement speed
 		global_monthly_devastation = -0.1		#@ recovers faster from war since, well, there's not much to be damaged.
 												#@ global_devastation_modifier is not a real modifier; this is the additive one.
