@@ -13,7 +13,7 @@ tribal_rebels = {
 	gfx_type = culture_province
 	will_relocate = yes	
 
-	resilient = no					# Can retreat
+	resilient = yes		#@ was no. Survives a lost battle instead of disbanding on retreat.
 	reinforcing = yes				# Can reinforce
 	general = yes					# Does use generals
 	smart = yes						# Do assault forts, tactically withdraw from battle, etc.

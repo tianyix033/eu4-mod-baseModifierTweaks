@@ -16,7 +16,7 @@ coptic_rebels = {
 	gfx_type = culture_province
 	will_relocate = yes	
 	
-	resilient = no
+	resilient = yes		#@ was no. Survives a lost battle instead of disbanding on retreat.
 	reinforcing = yes
 	general = yes
 	smart = yes

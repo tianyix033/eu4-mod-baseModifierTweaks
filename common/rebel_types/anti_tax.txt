@@ -12,10 +12,10 @@ anti_tax_rebels = {
 	defect_delay = 120
 	gfx_type = culture_province
 	
-	resilient = no					# Disbands on retreat
-	reinforcing = no				# Does not receive reinforcements
+	resilient = yes		#@ was no. Survives a lost battle instead of disbanding on retreat.
+	reinforcing = yes		#@ was no. Replenishes its losses.
 	general = no					# Does not use generals
-	smart = no						# Does not assault forts, tactically withdraw from battle, etc.
+	smart = yes		#@ was no. Will assault forts and withdraw tactically.
 	unit_transfer = no				# Units do not remain after enforcing demands.
 	will_relocate = yes				# Units will relocate if they have sieged all provinces nearby and has to move over sea.
 	
