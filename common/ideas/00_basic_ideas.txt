@@ -1159,11 +1159,13 @@ maritime_ideas = {
 	merchant_marine = {
 		global_sailors_modifier = 0.5
 		# allowed_marine_fraction = 0.25		#@ marines are military, belong to naval_ideas
-		ship_power_propagation = 0.25			#@ moved from grand_navy
+		#@ ship_power_propagation = 0.25			#@ moved from grand_navy
+		naval_attrition = -0.25	
 	}
 	sheltered_ports = {
 		global_ship_repair = 0.25				#@ was 0.1
-		sailor_maintenance_modifer = -0.1
+		#@ sailor_maintenance_modifer = -0.1
+		trade_company_governing_cost = -0.25	#@ new
 	}
 	grand_navy = {
 		naval_forcelimit_modifier = 0.5
@@ -1171,6 +1173,7 @@ maritime_ideas = {
 	}
 	ships_penny = {
 		global_ship_cost = -0.1
+		mercantilism_cost = -0.25				#@ new
 	}
 	sea_hawks = {
 		global_naval_engagement_modifier = 0.1
