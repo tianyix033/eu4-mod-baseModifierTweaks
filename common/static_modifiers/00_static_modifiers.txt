@@ -621,6 +621,11 @@ base_values = {
 	max_flagships = 1
 	num_of_parliament_issues = 10
 	has_marines = yes
+	rebel_support_efficiency = 1			#@ new. A flat +100% for everyone. Supporting rebels costs real
+											#@ money and a diplomat for very little effect, so nobody ever uses
+											#@ the action. This doubles the baseline rather than touching the
+											#@ cost. spy_ideas keeps its own +1 on top, so a spy nation runs at
+											#@ +200%.
 
 	#@ Army and navy tradition pivot at 50 instead of scaling from 0.
 	#@ The matching entries in the army_tradition / navy_tradition blocks are

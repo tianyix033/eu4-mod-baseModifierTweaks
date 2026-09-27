@@ -478,6 +478,8 @@ spy_ideas = {
 
 	state_propaganda = {
 		ae_impact = -0.2
+		years_of_nationalism = -5			#@ new. Collaborators cultivated ahead of the conquest,
+											#@ so newly taken land settles faster.
 	}
 
 	efficient_spies = {
@@ -966,6 +968,7 @@ exploration_ideas = {
 	important = yes
 
 	bonus = {
+		colony_development_boost = 1		#@ new
 		cb_on_primitives = yes
 	}
 
@@ -979,6 +982,8 @@ exploration_ideas = {
 	}
 	overseas_exploration = {
 		range = 0.5
+		trade_range_modifier = 0.5				#@ new. Bare trade_range is not a modifier -
+										#@ zero assignments in vanilla; only trade_range_modifier exists.
 	}
 	land_of_opportunity = {
 		global_colonial_growth = 10
@@ -1440,6 +1445,7 @@ expansion_ideas = {
 	important = yes
 
 	bonus = {
+		native_assimilation = 0.5		#@ new
  		min_autonomy_in_territories = -0.1
 	}
 
@@ -1449,12 +1455,14 @@ expansion_ideas = {
 	}
 	additional_merchants = {
 		merchants = 1
+		trade_steering = 0.1				#@ new and fitting for colonial playstyle
 	}
 	faster_colonists = {
 		global_colonial_growth = 20
+		native_uprising_chance = -1			#@ new
 	}
 	vice_roys  = {
-		global_tariffs = 0.10
+		global_tariffs = 0.25				#@ was 0.1
  		envoy_travel_time = -0.20
  	}
 	additional_diplomats = {
@@ -1468,6 +1476,7 @@ expansion_ideas = {
 	}
 	competetive_merchants  = {
 		global_trade_power = 0.2
+
 	}
 
 	ai_will_do = {
@@ -1753,7 +1762,7 @@ naval_ideas = {
 	}
 	superior_seamanship = {
 		#@ naval_morale = 0.1
-		# global_naval_engagement_modifier = 0.1	@ nerfed as compensation
+		global_naval_engagement_modifier = 0.1	
 		global_sailors_modifier = 0.25			#@ new
 		movement_speed_in_fleet_modifier = 1	#@ moved from maritime
 	}
