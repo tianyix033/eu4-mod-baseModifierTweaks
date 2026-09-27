@@ -1044,7 +1044,7 @@ negative_karma = {
 
 # Multiplied by Development/COUNTRY_DEVELOPMENT_SCALE
 country_development = {
-	horde_unity = -3
+	horde_unity = -1.5						#@ was -3
 	development_cost_modifier = -0.06		#@ new. This whole block is multiplied by total development divided by
 											#@ COUNTRY_DEVELOPMENT_SCALE (600), so the discount grows with the size of
 											#@ the country.
@@ -1057,7 +1057,7 @@ country_development = {
 											#@ bonus in the game lands on development_cost. Putting the size discount
 											#@ on the other factor keeps it meaningful at the margin without piling
 											#@ onto an already crowded multiplier at the extremes.
-	stability_cost_modifier = 0.12			#@ new
+	stability_cost_modifier = 0.18			#@ new: a 6000 dev super country should have 100 * (1 + 2.4) = 340 admin mana cost
 }
 
 

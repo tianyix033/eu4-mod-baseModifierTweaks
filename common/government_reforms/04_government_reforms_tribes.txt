@@ -60,6 +60,7 @@ steppe_horde = {
 		reinforce_speed = 0.2				#@ corresponds to faster movement speed
 		global_monthly_devastation = -0.1		#@ recovers faster from war since, well, there's not much to be damaged.
 												#@ global_devastation_modifier is not a real modifier; this is the additive one.
+		war_taxes_cost_modifier = -0.5
 	}
 	custom_attributes = {
 		enables_horde_idea_group = yes
