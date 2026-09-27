@@ -46,6 +46,7 @@ aristocracy_ideas = {
 	rightful_conquest = {
 		fabricate_claims_cost = -0.5
 		unjustified_demands = -0.25
+		core_creation = -0.1			#@ new
 	}
 	local_nobility = {
 		global_autonomy = -0.025
@@ -91,7 +92,8 @@ plutocracy_ideas = {
 	category = MIL
 
 	bonus = {
-		global_prov_trade_power_modifier = 0.25
+		republican_tradition = 0.3			#@ new
+		#@ global_prov_trade_power_modifier = 0.25 moved to free_merchants
 		burghers_loyalty_modifier = 0.1
 		vaisyas_loyalty_modifier = 0.1
 	}
@@ -110,9 +112,11 @@ plutocracy_ideas = {
 	}
 	bill_of_rights = {
 		monthly_reform_progress = 0.1
+		interest = -0.5				#@ new
 	}
 	free_merchants = {
 		merchants = 1
+		global_prov_trade_power_modifier = 0.25	#@ moved from bonus
 	}
 	free_subjects = {
 		global_trade_goods_size_modifier = 0.1
@@ -168,12 +172,15 @@ horde_gov_ideas = {
 	}
 	beyond_the_sun = {
 		ae_impact = -0.1
+		overextension_impact_modifier = -0.25			#@ new
 	}
 	mandate_of_the_khan = {
 		religious_unity = 0.25
+		manpower_in_accepted_culture_provinces = 0.10	#@ new
 	}
 	there_shall_be_no_grass = {
 		land_attrition = -0.2
+		siege_ability = 0.1								#@ new
 	}
 	horde_loyalty = {
 		global_unrest = -1
@@ -181,9 +188,11 @@ horde_gov_ideas = {
 	}
 	watchers_of_the_silk_road = {	
 		caravan_power = 0.20
+		production_efficiency = 0.1						#@ new
 	}
 	a_magnanimous_empire = {
 		num_accepted_cultures = 2
+		prestige = 1									#@ new
 	}
 	
 	ai_will_do = {
@@ -333,6 +342,7 @@ innovativeness_ideas = {
 	}
 	expanded_policies = {
 		free_policy = 1
+		monthly_reform_progress_modifier = 0.1
 	}
 
 	ai_will_do = {
@@ -1160,10 +1170,10 @@ maritime_ideas = {
 	#@ moved to first because I want something that buffs the naval
 	#@ as early as possible to make this more worth it
 	sea_hawks = {
-		global_naval_engagement_modifier = 0.1
+		#@ global_naval_engagement_modifier = 0.1
 		naval_morale = 0.1
 		#@ movement_speed_in_fleet_modifier = 1 	#@ moved from bonus
-		#@ admiral_cost = -0.25
+		admiral_cost = -0.25
 	}
 	merchant_traditions = {
 		naval_tradition_from_trade = 1.0
@@ -1689,9 +1699,10 @@ influence_ideas = {
 	}
 	buffer_states = {
 		diplomatic_upkeep = 1
+		accept_vassalization_reasons = 10		#@ new
 	}
 	diplomatic_influence = {
-		diplomatic_reputation = 2
+		diplomatic_reputation = 2		
 	}
 	postal_service = {
 		envoy_travel_time = -0.25
