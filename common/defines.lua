@@ -1630,11 +1630,7 @@ NAI = {
 	GREAT_PROJECT_DESIRE_CAPITAL_MODIFIER = 3,
 	GREAT_PROJECT_DESIRE_CAPITAL_BASE = 10,
 	GREAT_PROJECT_DESIRE_CAPITAL_AREA_MODIFIER = 3,
-	ACCEPTABLE_BALANCE_DEFAULT = 1.0, --@ was 1.2 vanilla, then 1.1 here. The strength edge the AI wants before it will fight; Paradox came down from 1.7.
-	--@ MULT_OFFENSIVE 0.85 and MULT_FRIEND_IN_COMBAT 0.8 both cut this, and the engine has no
-	--@ DEFENSIVE counterpart - so an attacker needs only 0.85 while a lone defender needs the
-	--@ full 1.0. That asymmetry is why the AI abandons good ground. Lowering this base is the
-	--@ only way to move the defensive threshold, and it moves the offensive one with it.
+	ACCEPTABLE_BALANCE_DEFAULT = 1.1, --@ was 1.2. The AI refuses any battle it does not have this edge in, which is why it walks away from an even fight. Paradox already moved this from 1.7; this is one more step the same way.
 	ACCEPTABLE_BALANCE_MULT_FRIEND_IN_COMBAT = 0.8,
 	ACCEPTABLE_BALANCE_MULT_OFFENSIVE = 0.85, -- Unless friend in combat is already applied
 	ACCEPTABLE_BALANCE_THREAT_WEIGHT = 1.0,
