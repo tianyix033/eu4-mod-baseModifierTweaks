@@ -335,7 +335,7 @@ innovativeness_ideas = {
 	dynamic_court = {
 		advisor_pool = 2		#@ added
 		advisor_cost = -0.1					#@ new. Halved from the -0.2 that used to be the group bonus.
-		monthly_reform_progress_modifier = 0.1	#@ moved from expanded_policies, which this group no
+		# monthly_reform_progress_modifier = 0.1	#@ moved from expanded_policies, which this group no
 												#@ longer has. A court of capable men passes reforms faster.
 	}
 	print_culture = {
@@ -1694,10 +1694,12 @@ influence_ideas = {
 
 	bonus = {
 		unjustified_demands = -0.5
+		tributary_conversion_cost_modifier = -0.25		#@ new
 	}
 
 	tribute_system = {
 		vassal_income = 0.25
+		monarch_power_tribute = 1				#@ new
 		can_fabricate_for_vassals = yes			#@ new
 	}
 	
@@ -1708,13 +1710,15 @@ influence_ideas = {
 	
 	integrated_elites = {
 		diplomatic_annexation_cost = -0.25
+		annexation_relations_impact = -0.5		#@ new
 	}
 	buffer_states = {
 		diplomatic_upkeep = 1
 		accept_vassalization_reasons = 10		#@ new
 	}
 	diplomatic_influence = {
-		diplomatic_reputation = 2		
+		diplomatic_reputation = 2
+		chance_to_inherit = 0.5					#@ new		
 	}
 	postal_service = {
 		envoy_travel_time = -0.25
@@ -1722,6 +1726,7 @@ influence_ideas = {
 	}
 	marcher_lords = {
 		vassal_forcelimit_bonus = 1
+		vassal_manpower_bonus = 0.25			#@ new
 	}
 
 	ai_will_do = {
@@ -1741,6 +1746,32 @@ influence_ideas = {
 		modifier = {
 			factor = 0.75
 			NOT = { monthly_dip = 8 }
+		}
+		#@ With no subject at all, almost every line in this group does nothing -
+		#@ vassal income, forcelimit, manpower, liberty desire, annexation cost and
+		#@ inheritance all need someone to apply to. At 0.5 x 0.1 the AI will
+		#@ effectively never take it, which is right: with no subjects it is
+		#@ strictly worse than any other diplomatic group.
+		modifier = {
+			factor = 0.1
+			NOT = { num_of_subjects = 1 }
+		}
+		#@ A subject past HIGH_LIBERTY_DESIRE (50 in defines) is the exact problem
+		#@ this group solves, and the AI is notoriously bad at managing it.
+		modifier = {
+			factor = 2
+			any_subject_country = {
+				liberty_desire = 50
+			}
+		}
+		#@ A personal union junior is the highest-value subject in the game, and
+		#@ chance_to_inherit plus the liberty desire tools are what hold it long
+		#@ enough to inherit. The AI rarely keeps a union to term on its own.
+		modifier = {
+			factor = 2
+			any_subject_country = {
+				junior_union_with = ROOT
+			}
 		}
 	}
 }
