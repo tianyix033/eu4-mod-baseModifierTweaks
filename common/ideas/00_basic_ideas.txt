@@ -167,7 +167,7 @@ horde_gov_ideas = {
 	}
 	
 	horse_lords = {
-		cavalry_cost = -0.33
+		cavalry_cost = -0.2								#@ was -0.33
 		cav_to_inf_ratio = 0.10
 	}
 	beyond_the_sun = {
@@ -191,7 +191,7 @@ horde_gov_ideas = {
 		production_efficiency = 0.1						#@ new
 	}
 	a_magnanimous_empire = {
-		num_accepted_cultures = 2
+		num_accepted_cultures = 1						#@ was 2
 		prestige = 1									#@ new
 	}
 	
@@ -315,7 +315,9 @@ innovativeness_ideas = {
 	category = ADM
 
 	bonus = {
-		advisor_cost = -0.2
+		free_policy = 1					#@ was advisor_cost = -0.2. Moved up from expanded_policies:
+										#@ a free policy needs two completed groups to be worth anything, so it
+										#@ belongs at the end of the group rather than inside it.
 	}
 
 	patron_of_art  = {
@@ -327,10 +329,14 @@ innovativeness_ideas = {
 	}
 	scientific_revolution = {
 		technology_cost = -0.1
+		stability_cost_modifier = -0.1		#@ new; science prevents superstition on governance
 		#embracement_cost = -0.1	@ moved to later
 	}
 	dynamic_court = {
 		advisor_pool = 2		#@ added
+		advisor_cost = -0.1					#@ new. Halved from the -0.2 that used to be the group bonus.
+		monthly_reform_progress_modifier = 0.1	#@ moved from expanded_policies, which this group no
+												#@ longer has. A court of capable men passes reforms faster.
 	}
 	print_culture = {
 		global_institution_spread = 0.33	#@ was 0.25
@@ -340,9 +346,13 @@ innovativeness_ideas = {
 		war_exhaustion = -0.05
 		monthly_splendor = 1
 	}
-	expanded_policies = {
-		free_policy = 1
-		monthly_reform_progress_modifier = 0.1
+	#@ Replaces expanded_policies. Not generic firepower - that is what military tech
+	#@ buys. This is cannon founding as an applied science: ranging tables and the
+	#@ gunner's quadrant for accuracy, better powder chemistry for the burst, and a
+	#@ lighter, truer barrel, so more of them fit on a deck.
+	science_of_gunnery = {
+		number_of_cannons_modifier = 0.1	#@ 7 vanilla entries use exactly 0.1
+		backrow_artillery_damage = 0.2		#@ level 4 of 4 on the designer curve, 30 points
 	}
 
 	ai_will_do = {
@@ -1164,6 +1174,7 @@ maritime_ideas = {
 
 	bonus = {
 		sea_repair = yes
+		reduced_liberty_desire_on_other_continent = 10	#@ moved from expansion
 		cb_on_overseas = yes					#@ new
 	}
 
@@ -1469,7 +1480,7 @@ expansion_ideas = {
 	}
 	faster_colonists = {
 		global_colonial_growth = 20
-		native_uprising_chance = -1			#@ new
+		native_uprising_chance = -1			#@ new; this means no more native uprisings
 	}
 	vice_roys  = {
 		global_tariffs = 0.25				#@ was 0.1
@@ -1477,7 +1488,7 @@ expansion_ideas = {
  	}
 	additional_diplomats = {
 		diplomats = 1
-		reduced_liberty_desire_on_other_continent = 5
+		#@ reduced_liberty_desire_on_other_continent = 5  moved to maritime
 	}
 	general_colonization_law  = {
 		colonists = 1
@@ -1687,10 +1698,11 @@ influence_ideas = {
 
 	tribute_system = {
 		vassal_income = 0.25
+		can_fabricate_for_vassals = yes			#@ new
 	}
 	
 	additional_loyalist_recruitment = {
-		reduced_liberty_desire = 15
+		reduced_liberty_desire = 20				#@ was 15
 		vassal_naval_forcelimit_bonus = 0.1
 	}
 	
