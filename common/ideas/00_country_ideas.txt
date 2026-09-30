@@ -3786,6 +3786,13 @@ TAU_ideas = {
 	the_hluttaw = {
 		global_unrest = -2				#@ unchanged. The royal council that actually
 											#@ administered what the army took.
+		global_tax_modifier = 0.1		#@ new, and the set's only economic line. Put
+											#@ here because vanilla's own the_hluttaw_desc already
+											#@ says the council's branches are "fiscal, executive
+											#@ and judicial" - it advertised a treasury it never
+											#@ had. Also restores the global_tax_modifier = 0.1
+											#@ that vanilla kept in the tradition, which we
+											#@ replaced with discipline and forcelimit.
 	}
 	nat_worship = {
 		religious_unity = 0.2			#@ unchanged. Nat spirit worship folded into
