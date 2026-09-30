@@ -720,6 +720,10 @@ RUS_ideas = {
 		yearly_corruption = -0.1
 		nobles_influence_modifier = -0.1
 	}
+	siberian_frontier = {						#@ this is moved to later to delay exploration and boost early combat
+		may_establish_frontier = yes
+		auto_explore_adjacent_to_colony = yes
+	}
 	table_of_ranks = {
 		advisor_cost = -0.10
 		army_tradition = 1			#@ was 0.25
@@ -727,10 +731,6 @@ RUS_ideas = {
 	curriculum_of_the_cadet_corps = {
 		land_morale = 0.1			#@ was 0.05
 		fire_damage_received = -0.1
-	}
-	siberian_frontier = {						#@ this is moved to last to delay exploration and boost early combat
-		may_establish_frontier = yes
-		auto_explore_adjacent_to_colony = yes
 	}
 }
 
@@ -3197,8 +3197,8 @@ MJZ_ideas = {
 	}
 	
 	bonus = {
-		# land_attrition = -0.1		@ removed
-		global_tax_modifier = 0.2		#@ new
+		land_attrition = -0.1		
+		# global_tax_modifier = 0.2		#@ new
 	}
 	
 	trigger = {
@@ -3241,7 +3241,7 @@ MJZ_ideas = {
 	}
 	the_jurchen_banners = {
 		amount_of_banners = 0.15
-		siege_ability = 0.1		#@ added
+		# siege_ability = 0.1		#@ added
 	}
 }
 
@@ -3281,11 +3281,12 @@ MCH_ideas = {
 	}	
 	link_with_the_mongol_dynasty = {
 		cavalry_power = 0.10				#@ was 0.15
-		siege_ability = 0.20				#@ added
+		siege_ability = 0.10				#@ added
 	}
 	manchu_chinese_learning = {
 		mil_tech_cost_modifier = -0.1
-		global_tax_modifier = 0.2			#@ new
+		free_mil_policy = 1					#@ new
+		# global_tax_modifier = 0.2			#@ new
 	}
 	seven_grievances = {
 		ae_impact = -0.1
@@ -3734,13 +3735,18 @@ MAR_ideas = {
 
 
 TAU_ideas = {
+	#@ Reworked. Vanilla's key names are kept throughout - they are good history
+	#@ already (mandala, chakravartin, the Hluttaw, bayingyi, nat worship) - so no
+	#@ new localisation is needed. Only the values and the ordering move.
 	start = {
-		leader_land_manuever = 1
-		global_tax_modifier = 0.1
+		discipline = 0.05				#@ was leader_land_manuever = 1
+		land_forcelimit_modifier = 0.25	#@ was global_tax_modifier = 0.1
 	}
 	
 	bonus = {
-		core_creation = -0.15
+		core_creation = -0.15			#@ unchanged. Bayinnaung absorbed Ava, Pegu,
+											#@ the Shan states, Lan Na and Lan Xang inside
+											#@ thirty years; cheap cores are the whole story.
 	}
 	
 	trigger = {
@@ -3752,25 +3758,38 @@ TAU_ideas = {
 	free = yes
 	
 	mandala_system = {
-		global_manpower_modifier = 0.25
-	}
-	tau_elephant_battles = {
-		cavalry_power = 0.20
-	}
-	nat_worship = {
-		religious_unity = 0.2
-	}
-	chakravartin = {
-		army_tradition = 0.5
-	}
-	the_hluttaw = {
-		global_unrest = -2
+		global_manpower_modifier = 0.25	#@ unchanged. The levy under the mandala -
+											#@ concentric rings of subordinate lords, each
+											#@ owing men rather than territory.
 	}
 	tau_organized_campaigns = {
-		land_attrition = -0.10
+		land_attrition = -0.20			#@ was -0.10, and moved from slot 6 to slot 2.
+											#@ The Toungoo armies marched over the Shan hills to
+											#@ Ayutthaya and Lan Xang and arrived able to fight.
+											#@ Attrition relief early is what makes that possible.
 	}
 	bayingyi = {
-		infantry_cost = -0.2
+		infantry_power = 0.10			#@ was infantry_cost = -0.2. The bayingyi were
+											#@ the Portuguese and Eurasian musketeers and gunners
+											#@ Tabinshwehti hired at Pegu and Bayinnaung kept -
+											#@ that is firepower, not cheapness.
+	}
+	tau_elephant_battles = {
+		cavalry_power = 0.20			#@ unchanged. War elephants count as cavalry.
+	}
+	chakravartin = {
+		province_warscore_cost = -0.1	#@ was army_tradition = 0.5. The cakkavatti
+											#@ claim to universal kingship: rival kings submit
+											#@ and are enthroned as vassals rather than fought to
+											#@ the last province.
+	}
+	the_hluttaw = {
+		global_unrest = -2				#@ unchanged. The royal council that actually
+											#@ administered what the army took.
+	}
+	nat_worship = {
+		religious_unity = 0.2			#@ unchanged. Nat spirit worship folded into
+											#@ Theravada practice rather than suppressed.
 	}
 }
 
@@ -16163,7 +16182,7 @@ CSH_ideas = {
 	}
 	
 	bonus = {
-		prestige = 1
+		core_creation = -0.1
 	}
 	
 	trigger = {
@@ -16172,7 +16191,7 @@ CSH_ideas = {
 	free = yes
 	
 	shun_humble_beginnings = {
-		manpower_recovery_speed = 0.1
+		manpower_recovery_speed = 0.25			#@ was 0.1
 	}
 	shun_dashing_king = {
 		diplomatic_reputation = 1
