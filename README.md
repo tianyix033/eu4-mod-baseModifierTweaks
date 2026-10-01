@@ -20,8 +20,7 @@ rebel stacks scale with the era.
 
 **Idea groups.** `00_basic_ideas.txt` is rebalanced so the weak groups are worth
 taking — influence, espionage, maritime, aristocracy and plutocracy all gain —
-and innovativeness is reworked around a free policy rather than a flat
-discount. `FREE_IDEA_GROUP_COST` rises from 3 to 4.
+and innovativeness is given military boost to firepower. `FREE_IDEA_GROUP_COST` rises from 3 to 4.
 
 **Technology and institutions.** Institution spread is slowed to a third of
 vanilla, and the link between uneven tech and corruption is removed outright
