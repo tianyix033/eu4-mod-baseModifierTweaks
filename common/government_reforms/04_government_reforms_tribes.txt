@@ -49,9 +49,10 @@ steppe_horde = {
 		cavalry_cost = -0.33				#@ new, too many horses
 		development_cost = 0.1				#@ compensation nerf
 		global_tax_modifier = -0.5			#@ hits hard, represents low governance
+		range = -0.9					#@ new
 		#@ years_of_nationalism = -5
 		#@ reinforce_cost_modifier = -0.5
-		war_exhaustion = -0.5				#@ new
+		war_exhaustion = -0.1				#@ new
 		land_attrition = -0.25				#@ new. They know the country. The other half of this is on the
 											#@ terrain itself - steppe, desert and coastal desert each carry
 											#@ local_hostile_attrition 2 in HistoryCorrections/map/terrain.txt, so
@@ -100,8 +101,9 @@ great_mongol_state_reform = {
 		cavalry_cost = -0.33				#@ new, too many horses
 		development_cost = 0.1				#@ compensation nerf
 		global_tax_modifier = -0.5			#@ hits hard, represents low governance
+		range = -0.9					#@ new
 		#@ reinforce_cost_modifier = -0.5
-		war_exhaustion = -0.5				#@ new
+		war_exhaustion = -0.1				#@ new
 		land_attrition = -0.25				#@ new. They know the country. The other half of this is on the
 											#@ terrain itself - steppe, desert and coastal desert each carry
 											#@ local_hostile_attrition 2 in HistoryCorrections/map/terrain.txt, so
@@ -111,6 +113,7 @@ great_mongol_state_reform = {
 		global_monthly_devastation = -0.1		#@ recovers faster from war since, well, there's not much to be damaged.
 												#@ global_devastation_modifier is not a real modifier; this is the additive one.
 		years_of_nationalism = -5
+		war_taxes_cost_modifier = -0.5		#@ new
 		may_establish_frontier = yes
 	}
 	conditional = {
