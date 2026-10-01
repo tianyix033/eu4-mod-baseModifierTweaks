@@ -562,7 +562,7 @@ diplomatic_ideas = {
 		diplomatic_upkeep = 1
 	}
 	benign_diplomats = {
-		improve_relation_modifier = 0.25
+		improve_relation_modifier = 0.1		#@ was 0.25
 		diplomats = 1
 	}
 	experienced_diplomats  = {
@@ -1718,7 +1718,8 @@ influence_ideas = {
 	}
 	diplomatic_influence = {
 		diplomatic_reputation = 2
-		chance_to_inherit = 0.5					#@ new		
+		improve_relation_modifier = 0.25			#@ new
+		#@ chance_to_inherit = 0.5					#@ new		
 	}
 	postal_service = {
 		envoy_travel_time = -0.25
@@ -1954,6 +1955,9 @@ mercenary_ideas = {
 
 	organised_mercenary_payment = {
 		mercenary_cost = -0.25
+		# You want me to drill them? They should be cheaper to 
+		# just keep around instead of disbanded during peace
+		merc_maintenance_modifier = -0.10	#@ new;
 	}
 	war_council = {
 		mil_advisor_cost = -0.25
@@ -1968,6 +1972,7 @@ mercenary_ideas = {
 	benefits_for_mercenaries = {
 		#war_taxes_cost_modifier = -0.5		@ busted
 		merc_leader_army_tradition = 0.5
+		yearly_army_professionalism = 0.01	#@ new
 	}
 	seasoned_veterans = {
 		infantry_power = 0.1
@@ -2016,6 +2021,7 @@ infrastructure_ideas = {
 	expanded_infrastructure_network = {
 		movement_speed = 0.1
 		center_of_trade_upgrade_cost = -0.2
+		global_allowed_num_of_buildings = 1		#@ new
 	}
 	administrative_efficiency_idea = {
 		state_governing_cost = -0.1
